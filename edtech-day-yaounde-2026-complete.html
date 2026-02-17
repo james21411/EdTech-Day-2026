@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdTech Day Yaoundé 2026 - Numériser les enseignements à l'ère de l'IA générative</title>
+    <meta name="description" content="EdTech Day Yaoundé 2026, événement phare des technologies éducatives au Cameroun, conjointement avec la Conférence CAITED, 8-10 Juin 2026, Université de Yaoundé.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                includedLanguages: 'fr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #4cc9f0;
+            --success-color: #2ec4b6;
+            --warning-color: #ff9f1c;
+            --danger-color: #e71d36;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --purple-gradient: linear-gradient(135deg, #4361ee, #3a0ca3);
+            --blue-gradient: linear-gradient(135deg, #4cc9f0, #4361ee);
+            --orange-gradient: linear-gradient(135deg, #ff9f1c, #e71d36);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Google Translate Widget Styling */
+        #google_translate_element {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            min-width: 200px;
+        }
+        
+        .goog-te-gadget {
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: 1px solid #dee2e6 !important;
+            border-radius: 6px !important;
+            padding: 8px 12px !important;
+            font-size: 14px !important;
+        }
+        
+        .goog-te-menu-value span {
+            color: var(--dark-color) !important;
+        }
+        
+        .goog-te-menu-value span:first-child {
+            color: var(--primary-color) !important;
+        }
+        
+        .goog-te-menu-frame {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+            border-radius: 8px !important;
+        }
+        
+        .goog-te-menu2 {
+            max-width: 200px !important;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            min-width: 200px;
+            display: none; /* Hidden by default, shown as fallback */
+        }
+        
+        .language-switcher.show {
+            display: block;
+        }
+        
+        .language-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 5px;
+        }
+        
+        .language-option:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .language-option.active {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .language-flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+        
+        .translation-notice {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--purple-gradient);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 9998;
+            display: none;
+            max-width: 300px;
+            font-size: 14px;
+        }
+        
+        .translation-notice.show {
+            display: block;
+            animation: slideInUp 0.3s ease;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: var(--purple-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: var(--purple-gradient), url('https://picsum.photos/1920/1080?random=100');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--purple-gradient);
+            border-radius: 2px;
+        }
+        
+        .section-title.left-align:after {
+            left: 0;
+            transform: none;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .date-badge {
+            background: var(--orange-gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 159, 28, 0.3);
+        }
+        
+        .location-badge {
+            background: var(--blue-gradient);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .btn-primary-custom {
+            background: var(--purple-gradient);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
+            color: white;
+        }
+        
+        .btn-secondary-custom {
+            background: transparent;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary-custom:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--purple-gradient);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .speaker-card {
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .speaker-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .speaker-role {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .exhibition-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .exhibition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .exhibition-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .hackathon-card {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+        
+        .hackathon-prize {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4cc9f0;
+            margin-bottom: 10px;
+        }
+        
+        .sponsor-logo {
+            height: 70px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sponsor-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        .demo-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .demo-img {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--blue-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .partner-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .partner-badge h5 {
+            color: #4cc9f0;
+            margin-bottom: 10px;
+        }
+        
+        .theme-banner {
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+            border-left: 5px solid var(--primary-color);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .stats-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stats-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            background: var(--purple-gradient);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            padding: 20px 30px;
+            border: none;
+        }
+        
+        /* Skip translation for specific elements */
+        .notranslate {
+            /* Elements that shouldn't be translated */
+        }
+        
+        /* Hide Google Translate top banner */
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+        
+        body {
+            top: 0px !important;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            #google_translate_element {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+                min-width: auto;
+            }
+            
+            .language-switcher {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+    
+    <!-- Fallback Language Switcher (hidden by default) -->
+    <div class="language-switcher" id="fallbackLanguageSwitcher">
+        <h6 class="mb-3">Choisir la langue / Choose language</h6>
+        <div class="language-option active" onclick="switchLanguage('fr')">
+            <img src="https://flagcdn.com/w40/fr.png" class="language-flag" alt="French flag">
+            <span>Français</span>
+        </div>
+        <div class="language-option" onclick="switchLanguage('en')">
+            <img src="https://flagcdn.com/w40/gb.png" class="language-flag" alt="English flag">
+            <span>English</span>
+        </div>
+    </div>
+    
+    <!-- Translation Notice -->
+    <div class="translation-notice" id="translationNotice">
+        <div class="d-flex justify-content-between align-items-start">
+            <div>
+                <strong><i class="bi bi-translate me-2"></i>Traduction automatique</strong>
+                <p class="mb-0 mt-1">Cette page est traduite automatiquement. Certains termes peuvent ne pas être exacts.</p>
+            </div>
+            <button type="button" class="btn-close btn-close-white" onclick="hideTranslationNotice()"></button>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand notranslate" href="#">
+                <i class="bi bi-laptop me-2"></i>EdTech Day <span class="text-dark">2026</span>
+            </a>
+            
+            <!-- Language Toggle Button -->
+            <button class="btn btn-outline-primary btn-sm me-3 d-lg-none" onclick="toggleLanguageSwitcher()">
+                <i class="bi bi-translate"></i> FR/EN
+            </button>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apropos">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programme">Programme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#exposition">Exposition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hackathon">Hackathon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#speakers">Conférenciers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ateliers">Ateliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partenaires">Partenaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inscription">Inscription</a>
+                    </li>
+                    
+                    <!-- Language Toggle for Desktop -->
+                    <li class="nav-item d-none d-lg-block">
+                        <button class="btn btn-outline-primary btn-sm" onclick="toggleLanguageSwitcher()">
+                            <i class="bi bi-translate me-1"></i> FR/EN
+                        </button>
+                    </li>
+                    
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-primary-custom" onclick="scrollToRegistration()">S'inscrire</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <span class="date-badge notranslate">8-10 Juin 2026</span>
+                    <span class="location-badge notranslate">Yaoundé, Cameroun</span>
+                    
+                    <h1 class="hero-title">EdTech Day Yaoundé 2026</h1>
+                    
+                    <h2 class="hero-subtitle">Numériser les enseignements à l'ère de l'IA générative : quels leviers d'efficacité au Cameroun ?</h2>
+                    
+                    <p class="lead mb-4">Événement phare des technologies éducatives au Cameroun, organisé conjointement avec la Conférence CAITED. Le 10 Juin 2026 est dédié au Sommet des EdTech à Yaoundé.</p>
+                    
+                    <div class="d-flex flex-wrap align-items-center mb-5">
+                        <button class="btn btn-primary-custom me-3 mb-2" onclick="scrollToRegistration()">S'inscrire Maintenant</button>
+                        <a href="#programme" class="btn btn-secondary-custom mb-2">Voir le Programme</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="bg-white rounded p-4 text-dark shadow-lg">
+                        <h5 class="fw-bold mb-3 text-center">Compte à rebours</h5>
+                        <div class="row text-center" id="countdown">
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="days">00</div>
+                                    <div class="countdown-label">Jours</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="hours">00</div>
+                                    <div class="countdown-label">Heures</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="minutes">00</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="seconds">00</div>
+                                    <div class="countdown-label">Secondes</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <p class="small mb-2"><i class="bi bi-calendar-event me-2"></i>8-9 Juin : Conférence CAITED</p>
+                            <p class="small mb-0"><i class="bi bi-star-fill me-2"></i>10 Juin : Sommet EdTech Yaoundé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stats-box">
+                        <div class="stats-number">3</div>
+                        <div class="stats-label">Jours d'événement</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stats-box">
+                        <div class="stats-number">50+</div>
+                        <div class="stats-label">Entreprises EdTech</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stats-box">
+                        <div class="stats-number">1000+</div>
+                        <div class="stats-label">Participants attendus</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stats-box">
+                        <div class="stats-number">30+</div>
+                        <div class="stats-label">Conférenciers experts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title left-align">À propos de l'événement</h2>
+                    <p class="lead">L'EdTech Day Yaoundé 2026 est l'événement de référence dédié aux technologies éducatives au Cameroun et en Afrique centrale.</p>
+                    
+                    <p>Organisé conjointement avec la <strong>Conférence CAITED (Conférence sur les Avancées en Informatique et Technologies Éducatives pour le Développement)</strong>, cet événement de trois jours rassemble les acteurs clés du secteur éducatif, technologique et entrepreneurial.</p>
+                    
+                    <p>Le <strong>10 Juin 2026</strong> est spécialement dédié au <strong>Sommet des EdTech à Yaoundé</strong>, un événement stratégique qui réunit décideurs politiques, investisseurs, entrepreneurs et éducateurs pour dessiner l'avenir de l'éducation numérique au Cameroun.</p>
+                    
+                    <div class="theme-banner">
+                        <h4 class="fw-bold">Thème 2026</h4>
+                        <h5>"Numériser les enseignements à l'ère de l'IA générative : quels leviers d'efficacité au Cameroun ?"</h5>
+                        <p class="mb-0">Explorer comment l'intelligence artificielle générative peut transformer l'enseignement et l'apprentissage dans le contexte camerounais.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=101" class="card-img-top" alt="Événement EdTech Day Yaoundé">
+                        <div class="card-body">
+                            <h5 class="card-title">En partenariat avec la Conférence CAITED</h5>
+                            <p class="card-text">L'EdTech Day Yaoundé 2026 s'inscrit dans le cadre de la conférence internationale CAITED, créant une synergie unique entre recherche académique et innovation entrepreneuriale.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="feature-icon" style="background: var(--purple-gradient);">
+                                            <i class="bi bi-calendar-week"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">8-9 Juin</h6>
+                                            <small>Conférence CAITED</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="feature-icon" style="background: var(--blue-gradient);">
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0">10 Juin</h6>
+                                            <small>Sommet EdTech</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Objectives -->
+            <div class="row mt-5">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Objectifs de l'EdTech Day 2026</h2>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto" style="background: var(--purple-gradient);">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h5 class="mt-3">Innovation</h5>
+                            <p>Présenter les innovations en IA générative appliquées à l'éducation et leur potentiel pour le Cameroun.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto" style="background: var(--blue-gradient);">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h5 class="mt-3">Réseautage</h5>
+                            <p>Créer des connections entre startups EdTech, investisseurs, éducateurs et décideurs politiques.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto" style="background: var(--success-color);">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <h5 class="mt-3">Business</h5>
+                            <p>Faciliter les opportunités d'affaires et les partenariats dans l'écosystème EdTech camerounais.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto" style="background: var(--warning-color);">
+                                <i class="bi bi-book-half"></i>
+                            </div>
+                            <h5 class="mt-3">Formation</h5>
+                            <p>Former les enseignants et éducateurs aux outils numériques et à l'IA générative pour l'éducation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Programme des 3 jours</h2>
+                    <p class="lead">Un événement riche en conférences, ateliers, démonstrations et networking</p>
+                </div>
+            </div>
+            
+            <!-- Day Tabs -->
+            <ul class="nav nav-pills justify-content-center mb-5" id="dayTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="day1-tab" data-bs-toggle="pill" data-bs-target="#day1-content" type="button">
+                        <i class="bi bi-calendar-day me-2"></i>Jour 1<br><small>8 Juin - Conférence CAITED</small>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="day2-tab" data-bs-toggle="pill" data-bs-target="#day2-content" type="button">
+                        <i class="bi bi-calendar-day me-2"></i>Jour 2<br><small>9 Juin - Conférence CAITED</small>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="day3-tab" data-bs-toggle="pill" data-bs-target="#day3-content" type="button">
+                        <i class="bi bi-star-fill me-2"></i>Jour 3<br><small>10 Juin - Sommet EdTech</small>
+                    </button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="dayTabsContent">
+                <!-- Day 1 -->
+                <div class="tab-pane fade show active" id="day1-content">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="timeline">
+                                <div class="timeline-item" data-aos="fade-up">
+                                    <div class="timeline-date">08:30 - 09:30</div>
+                                    <h5>Accueil et enregistrement</h5>
+                                    <p>Hall principal de l'Université de Yaoundé I</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="timeline-date">09:30 - 10:30</div>
+                                    <h5>Cérémonie d'ouverture conjointe</h5>
+                                    <p>Ouverture officielle de la Conférence CAITED et de l'EdTech Day Yaoundé 2026</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="timeline-date">10:30 - 12:30</div>
+                                    <h5>Session plénière : "IA générative et éducation"</h5>
+                                    <p>Conférence keynote par des experts internationaux en IA éducative</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="timeline-date">14:00 - 16:00</div>
+                                    <h5>Sessions parallèles de recherche</h5>
+                                    <p>Présentations de recherches académiques sur les technologies éducatives</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="timeline-date">16:30 - 18:30</div>
+                                    <h5>Ateliers pratiques</h5>
+                                    <p>Ateliers sur l'utilisation des outils numériques en classe</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="timeline-date">19:00 - 21:00</div>
+                                    <h5>Cocktail de bienvenue</h5>
+                                    <p>Networking et échanges informels entre participants</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="tab-pane fade" id="day2-content">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="timeline">
+                                <div class="timeline-item" data-aos="fade-up">
+                                    <div class="timeline-date">09:00 - 10:30</div>
+                                    <h5>Conférence keynote : "Pédagogies innovantes"</h5>
+                                    <p>Nouvelles approches pédagogiques à l'ère du numérique</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="timeline-date">11:00 - 13:00</div>
+                                    <h5>Table ronde : "Politiques éducatives numériques"</h5>
+                                    <p>Décideurs politiques discutent des stratégies de numérisation de l'éducation</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="timeline-date">14:30 - 16:30</div>
+                                    <h5>Session posters et démonstrations</h5>
+                                    <p>Présentation de projets de recherche et démonstrations de solutions EdTech</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="timeline-date">17:00 - 18:30</div>
+                                    <h5>Pré-lancement Hackathon EdTech</h5>
+                                    <p>Présentation des défis et formation des équipes pour le hackathon</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="timeline-date">19:30 - 22:00</div>
+                                    <h5>Dîner de gala</h5>
+                                    <p>Soirée de networking avec les partenaires et sponsors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 3 - EdTech Summit -->
+                <div class="tab-pane fade" id="day3-content">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="timeline">
+                                <div class="timeline-item" data-aos="fade-up">
+                                    <div class="timeline-date">08:00 - 09:00</div>
+                                    <h5>Accueil Sommet EdTech</h5>
+                                    <p>Enregistrement des participants au Sommet EdTech Yaoundé</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="timeline-date">09:00 - 10:30</div>
+                                    <h5>Ouverture officielle du Sommet EdTech</h5>
+                                    <p>Discours d'ouverture par les autorités ministérielles</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="timeline-date">10:30 - 12:30</div>
+                                    <h5>Panel ministériel : "Vision 2030 pour l'éducation numérique"</h5>
+                                    <p>Ministres de l'Éducation, des TIC et de l'Enseignement Supérieur</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="timeline-date">14:00 - 16:00</div>
+                                    <h5>Vitrine d'exposition EdTech</h5>
+                                    <p>Découverte des solutions innovantes des startups et entreprises EdTech</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="timeline-date">16:30 - 18:00</div>
+                                    <h5>Finale du Hackathon EdTech</h5>
+                                    <p>Présentation des projets et annonce des gagnants</p>
+                                </div>
+                                
+                                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="timeline-date">18:30 - 20:00</div>
+                                    <h5>Cérémonie de clôture et remise des prix</h5>
+                                    <p>Synthèse des travaux et annonce des partenariats conclus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibition Section -->
+    <section id="exposition" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Vitrine d'Exposition EdTech</h2>
+                    <p class="lead">Découvrez les solutions innovantes des startups et entreprises EdTech</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- EdTech Company 1 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="exhibition-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=110" class="exhibition-img" alt="EduTech Solutions">
+                        <div class="card-body">
+                            <h5 class="card-title">EduTech Solutions</h5>
+                            <p class="card-text">Plateforme d'apprentissage adaptatif utilisant l'IA pour personnaliser les parcours éducatifs.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">IA Éducative</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Voir la démo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EdTech Company 2 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="exhibition-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=111" class="exhibition-img" alt="LearnAI Cameroun">
+                        <div class="card-body">
+                            <h5 class="card-title">LearnAI Cameroun</h5>
+                            <p class="card-text">Assistant pédagogique basé sur l'IA générative pour la création de contenus éducatifs.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">IA Générative</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Voir la démo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EdTech Company 3 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="exhibition-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=112" class="exhibition-img" alt="VirtualClass Africa">
+                        <div class="card-body">
+                            <h5 class="card-title">VirtualClass Africa</h5>
+                            <p class="card-text">Solutions de réalité virtuelle pour l'enseignement des sciences et techniques.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning text-dark">Réalité Virtuelle</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Voir la démo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EdTech Company 4 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="exhibition-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=113" class="exhibition-img" alt="EduGames Studio">
+                        <div class="card-body">
+                            <h5 class="card-title">EduGames Studio</h5>
+                            <p class="card-text">Jeux éducatifs pour l'apprentissage des mathématiques et des langues.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info">Jeux Sérieux</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Voir la démo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EdTech Company 5 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="exhibition-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=114" class="exhibition-img" alt="TeacherTools Pro">
+                        <div class="card-body">
+                            <h5 class="card-title">TeacherTools Pro</h5>
+                            <p class="card-text">Suite d'outils pour la gestion de classe et l'évaluation automatisée.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-secondary">Outils Enseignants</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Voir la démo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EdTech Company 6 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="exhibition-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=115" class="exhibition-img" alt="Campus Digital">
+                        <div class="card-body">
+                            <h5 class="card-title">Campus Digital</h5>
+                            <p class="card-text">Plateforme de campus virtuel pour les établissements d'enseignement supérieur.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-dark">Campus Virtuel</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Voir la démo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#expositionModal">Réserver un stand d'exposition</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathon Section -->
+    <section id="hackathon" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Hackathon EdTech 2026</h2>
+                    <p class="lead">48 heures pour développer des solutions innovantes pour l'éducation camerounaise</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <div class="hackathon-card">
+                        <h3 class="fw-bold mb-4">Défis du Hackathon</h3>
+                        
+                        <div class="mb-4">
+                            <h5><i class="bi bi-1-circle-fill me-2"></i>IA pour l'éducation inclusive</h5>
+                            <p>Développer des solutions d'IA qui rendent l'éducation accessible aux apprenants en situation de handicap.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="bi bi-2-circle-fill me-2"></i>Contenus éducatifs locaux</h5>
+                            <p>Créer des outils pour générer des contenus éducatifs adaptés au contexte camerounais.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="bi bi-3-circle-fill me-2"></i>Évaluation automatisée</h5>
+                            <p>Développer des systèmes d'évaluation intelligents pour réduire la charge de travail des enseignants.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="bi bi-4-circle-fill me-2"></i>Apprentissage hors ligne</h5>
+                            <p>Créer des solutions éducatives fonctionnant sans connexion internet stable.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-left">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">Informations pratiques</h3>
+                            
+                            <div class="mb-4">
+                                <h5><i class="bi bi-calendar-event text-primary me-2"></i>Dates</h5>
+                                <p>9-10 Juin 2026 (début le 9 Juin à 17h, fin le 10 Juin à 18h)</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5><i class="bi bi-geo-alt text-primary me-2"></i>Lieu</h5>
+                                <p>Centre d'Innovation Numérique, Université de Yaoundé I</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5><i class="bi bi-people text-primary me-2"></i>Équipes</h5>
+                                <p>3-5 personnes par équipe, multidisciplinaires recommandées</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5><i class="bi bi-trophy text-primary me-2"></i>Prix</h5>
+                                <div class="hackathon-prize">5 000 000 FCFA</div>
+                                <p>Total des prix à gagner + incubation dans un accélérateur EdTech</p>
+                            </div>
+                            
+                            <button class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#hackathonModal">S'inscrire au Hackathon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Conférenciers & Panélistes</h2>
+                    <p class="lead">Experts internationaux et locaux en technologies éducatives et IA</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Speaker 1 -->
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="speaker-card">
+                        <img src="https://picsum.photos/200/200?random=120" class="speaker-img" alt="Dr. Amina Diallo">
+                        <h5 class="fw-bold">Dr. Amina Diallo</h5>
+                        <div class="speaker-role">Expert en IA Éducative, UNESCO</div>
+                        <p class="small">Spécialiste des politiques d'intégration de l'IA dans les systèmes éducatifs africains.</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="speaker-card">
+                        <img src="https://picsum.photos/200/200?random=121" class="speaker-img" alt="Prof. Jean Ndongo">
+                        <h5 class="fw-bold">Prof. Jean Ndongo</h5>
+                        <div class="speaker-role">Directeur du LITE, Université de Yaoundé I</div>
+                        <p class="small">Chercheur en technologies éducatives et directeur du Laboratoire d'Informatique et des Technologies Éducatives.</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 3 -->
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="speaker-card">
+                        <img src="https://picsum.photos/200/200?random=122" class="speaker-img" alt="Sarah Johnson">
+                        <h5 class="fw-bold">Sarah Johnson</h5>
+                        <div class="speaker-role">CEO, EduTech Global</div>
+                        <p class="small">Entrepreneure en EdTech avec 15 ans d'expérience dans le développement de plateformes d'apprentissage.</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 4 -->
+                <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="speaker-card">
+                        <img src="https://picsum.photos/200/200?random=123" class="speaker-img" alt="Dr. Kwame Osei">
+                        <h5 class="fw-bold">Dr. Kwame Osei</h5>
+                        <div class="speaker-role">Chercheur en IA Générative, MIT</div>
+                        <p class="small">Pionnier dans le développement de modèles d'IA générative pour la création de contenus éducatifs.</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">Voir tous les conférenciers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section id="ateliers" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Démonstrations & Ateliers</h2>
+                    <p class="lead">Sessions pratiques pour découvrir et maîtriser les outils EdTech</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Workshop 1 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="demo-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=130" class="demo-img" alt="Atelier IA Générative">
+                        <div class="card-body">
+                            <h5 class="card-title">Atelier : Créer avec l'IA Générative</h5>
+                            <p class="card-text">Apprenez à utiliser ChatGPT, Midjourney et autres outils d'IA pour créer des contenus éducatifs.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Niveau : Débutant</span>
+                                <span class="text-muted small">2 heures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Workshop 2 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="demo-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=131" class="demo-img" alt="Démo Réalité Virtuelle">
+                        <div class="card-body">
+                            <h5 class="card-title">Démo : Enseigner en Réalité Virtuelle</h5>
+                            <p class="card-text">Expérience immersive de cours en RV et démonstration de création de contenus éducatifs en RV.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Niveau : Intermédiaire</span>
+                                <span class="text-muted small">1.5 heures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Workshop 3 -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="demo-card card-hover">
+                        <img src="https://picsum.photos/400/250?random=132" class="demo-img" alt="Atelier LMS">
+                        <div class="card-body">
+                            <h5 class="card-title">Atelier : Moodle & Plateformes LMS</h5>
+                            <p class="card-text">Configuration et utilisation avancée des Learning Management Systems pour l'enseignement.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning text-dark">Niveau : Avancé</span>
+                                <span class="text-muted small">3 heures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partenaires" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Partenaires & Sponsors</h2>
+                    <p class="lead">Organisations qui soutiennent l'EdTech Day Yaoundé 2026</p>
+                </div>
+            </div>
+            
+            <!-- Organizing Partners -->
+            <div class="row mb-5">
+                <div class="col-12 text-center mb-4">
+                    <h4 class="fw-bold">Partenaires Organisateurs</h4>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="partner-badge">
+                        <h5>LITE</h5>
+                        <p class="mb-0">Laboratoire d'Informatique et des Technologies Éducatives, Université de Yaoundé I</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="partner-badge">
+                        <h5>SCNEF</h5>
+                        <p class="mb-0">Société Camerounaise du Numérique pour l'Éducation et la Formation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sponsors -->
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h4 class="fw-bold">Sponsors Principaux</h4>
+                </div>
+                
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-md-3 col-lg-2 mb-4">
+                            <img src="https://picsum.photos/150/80?random=140" class="sponsor-logo w-100" alt="Sponsor 1">
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 mb-4">
+                            <img src="https://picsum.photos/150/80?random=141" class="sponsor-logo w-100" alt="Sponsor 2">
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 mb-4">
+                            <img src="https://picsum.photos/150/80?random=142" class="sponsor-logo w-100" alt="Sponsor 3">
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 mb-4">
+                            <img src="https://picsum.photos/150/80?random=143" class="sponsor-logo w-100" alt="Sponsor 4">
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2 mb-4">
+                            <img src="https://picsum.photos/150/80?random=144" class="sponsor-logo w-100" alt="Sponsor 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#sponsorModal">Devenir Partenaire</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="inscription" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Inscription</h2>
+                    <p class="lead">Réservez votre place pour l'EdTech Day Yaoundé 2026</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <h3 class="text-center mb-4">Formules d'inscription</h3>
+                            
+                            <div class="row">
+                                <!-- Student Ticket -->
+                                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="card border-primary text-center h-100">
+                                        <div class="card-header bg-primary text-white py-3">
+                                            <h5 class="mb-0">Étudiant</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title">15 000 FCFA</h3>
+                                            <p class="text-muted">par personne</p>
+                                            <ul class="list-unstyled mb-4">
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Accès 3 jours</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Conférences</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Ateliers</li>
+                                                <li class="mb-2"><i class="bi bi-x text-danger me-2"></i>Dîner de gala</li>
+                                            </ul>
+                                            <button class="btn btn-outline-primary w-100" onclick="registerTicket('student')">S'inscrire</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Professional Ticket -->
+                                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="card border-warning text-center h-100">
+                                        <div class="card-header bg-warning text-dark py-3">
+                                            <h5 class="mb-0">Professionnel</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title">50 000 FCFA</h3>
+                                            <p class="text-muted">par personne</p>
+                                            <ul class="list-unstyled mb-4">
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Accès 3 jours</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Conférences</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Ateliers</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Dîner de gala</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Réseautage VIP</li>
+                                            </ul>
+                                            <button class="btn btn-warning w-100" onclick="registerTicket('professional')">S'inscrire</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Ticket -->
+                                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="card border-success text-center h-100">
+                                        <div class="card-header bg-success text-white py-3">
+                                            <h5 class="mb-0">Entreprise</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title">200 000 FCFA</h3>
+                                            <p class="text-muted">par entreprise</p>
+                                            <ul class="list-unstyled mb-4">
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>5 accès 3 jours</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Stand exposition</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Logo sur site web</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Dîner de gala</li>
+                                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Réseautage VIP</li>
+                                            </ul>
+                                            <button class="btn btn-success w-100" onclick="registerTicket('company')">S'inscrire</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <p class="text-muted">Pour les inscriptions de groupe (+10 personnes), contactez-nous à <a href="mailto:info@edtechday-yaounde.cm">info@edtechday-yaounde.cm</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">EdTech Day Yaoundé 2026</h4>
+                    <p>Événement phare des technologies éducatives au Cameroun, organisé conjointement avec la Conférence CAITED.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#accueil">Accueil</a></li>
+                        <li class="mb-2"><a href="#apropos">À propos</a></li>
+                        <li class="mb-2"><a href="#programme">Programme</a></li>
+                        <li class="mb-2"><a href="#exposition">Exposition</a></li>
+                        <li class="mb-2"><a href="#hackathon">Hackathon</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Liens utiles</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#speakers">Conférenciers</a></li>
+                        <li class="mb-2"><a href="#ateliers">Ateliers</a></li>
+                        <li class="mb-2"><a href="#partenaires">Partenaires</a></li>
+                        <li class="mb-2"><a href="#inscription">Inscription</a></li>
+                        <li class="mb-2"><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="text-white mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Université de Yaoundé I, Cameroun</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@edtechday-yaounde.cm</li>
+                        <li class="mb-2"><i class="bi bi-phone me-2"></i>+237 6XX XXX XXX</li>
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i>Lun - Ven: 9h - 17h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-5" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2026 EdTech Day Yaoundé. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <a href="#" class="me-3">Politique de confidentialité</a>
+                        <a href="#">Conditions d'utilisation</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    
+    <!-- Exhibition Modal -->
+    <div class="modal fade" id="expositionModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Réserver un stand d'exposition</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Réservez votre stand pour présenter vos solutions EdTech lors de l'EdTech Day Yaoundé 2026.</p>
+                    <form id="expositionForm">
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Nom de l'entreprise</label>
+                            <input type="text" class="form-control" id="companyName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPerson" class="form-label">Personne de contact</label>
+                            <input type="text" class="form-control" id="contactPerson" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="standType" class="form-label">Type de stand</label>
+                            <select class="form-select" id="standType" required>
+                                <option value="basic">Stand basique (3x3m) - 150 000 FCFA</option>
+                                <option value="premium">Stand premium (3x6m) - 250 000 FCFA</option>
+                                <option value="vip">Stand VIP (6x6m) - 400 000 FCFA</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description de votre solution EdTech</label>
+                            <textarea class="form-control" id="description" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hackathon Modal -->
+    <div class="modal fade" id="hackathonModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inscription au Hackathon EdTech 2026</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Inscrivez votre équipe pour participer au Hackathon EdTech 2026.</p>
+                    <form id="hackathonForm">
+                        <div class="mb-3">
+                            <label for="teamName" class="form-label">Nom de l'équipe</label>
+                            <input type="text" class="form-control" id="teamName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamLeader" class="form-label">Chef d'équipe</label>
+                            <input type="text" class="form-control" id="teamLeader" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamEmail" class="form-label">Email de l'équipe</label>
+                            <input type="email" class="form-control" id="teamEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamPhone" class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control" id="teamPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="challenge" class="form-label">Défi choisi</label>
+                            <select class="form-select" id="challenge" required>
+                                <option value="inclusive">IA pour l'éducation inclusive</option>
+                                <option value="content">Contenus éducatifs locaux</option>
+                                <option value="assessment">Évaluation automatisée</option>
+                                <option value="offline">Apprentissage hors ligne</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamMembers" class="form-label">Membres de l'équipe (3-5 personnes)</label>
+                            <textarea class="form-control" id="teamMembers" rows="3" placeholder="Nom, prénom, compétences de chaque membre" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="idea" class="form-label">Description de votre idée/projet</label>
+                            <textarea class="form-control" id="idea" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">S'inscrire au Hackathon</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sponsor Modal -->
+    <div class="modal fade" id="sponsorModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Devenir Partenaire/Sponsor</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Devenez partenaire ou sponsor de l'EdTech Day Yaoundé 2026 et bénéficiez d'une visibilité exceptionnelle.</p>
+                    <form id="sponsorForm">
+                        <div class="mb-3">
+                            <label for="sponsorName" class="form-label">Nom de l'organisation</label>
+                            <input type="text" class="form-control" id="sponsorName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sponsorContact" class="form-label">Personne de contact</label>
+                            <input type="text" class="form-control" id="sponsorContact" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sponsorEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="sponsorEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sponsorPhone" class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control" id="sponsorPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sponsorType" class="form-label">Type de partenariat</label>
+                            <select class="form-select" id="sponsorType" required>
+                                <option value="platinum">Sponsor Platine - 5 000 000 FCFA</option>
+                                <option value="gold">Sponsor Or - 2 500 000 FCFA</option>
+                                <option value="silver">Sponsor Argent - 1 000 000 FCFA</option>
+                                <option value="bronze">Sponsor Bronze - 500 000 FCFA</option>
+                                <option value="media">Partenaire Média</option>
+                                <option value="institutional">Partenaire Institutionnel</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sponsorInterest" class="form-label">Pourquoi souhaitez-vous devenir partenaire ?</label>
+                            <textarea class="form-control" id="sponsorInterest" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Envoyer la demande de partenariat</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contactez-nous</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Sujet</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('June 8, 2026 09:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="col-12"><h4 class="text-success">L\'événement a commencé !</h4></div>';
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Scroll to registration function
+        function scrollToRegistration() {
+            const registrationSection = document.getElementById('inscription');
+            if (registrationSection) {
+                window.scrollTo({
+                    top: registrationSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Form submission handlers
+        document.getElementById('expositionForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Demande de stand envoyée avec succès ! Nous vous contacterons dans les 48h.');
+            bootstrap.Modal.getInstance(document.getElementById('expositionModal')).hide();
+        });
+        
+        document.getElementById('hackathonForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Inscription au Hackathon envoyée avec succès !');
+            bootstrap.Modal.getInstance(document.getElementById('hackathonModal')).hide();
+        });
+        
+        document.getElementById('sponsorForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Demande de partenariat envoyée avec succès !');
+            bootstrap.Modal.getInstance(document.getElementById('sponsorModal')).hide();
+        });
+        
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message envoyé avec succès !');
+            bootstrap.Modal.getInstance(document.getElementById('contactModal')).hide();
+        });
+        
+        // Ticket registration function
+        function registerTicket(type) {
+            const ticketTypes = {
+                'student': 'Étudiant (15 000 FCFA)',
+                'professional': 'Professionnel (50 000 FCFA)',
+                'company': 'Entreprise (200 000 FCFA)'
+            };
+            
+            alert(`Inscription au forfait ${ticketTypes[type]} enregistrée ! Vous allez être redirigé vers la page de paiement.`);
+            // In a real implementation, this would redirect to a payment page
+        }
+        
+        // Language Translation Functions
+        
+        // Toggle language switcher
+        function toggleLanguageSwitcher() {
+            const switcher = document.getElementById('fallbackLanguageSwitcher');
+            switcher.classList.toggle('show');
+        }
+        
+        // Switch language (fallback function)
+        function switchLanguage(lang) {
+            const notice = document.getElementById('translationNotice');
+            notice.classList.add('show');
+            
+            // Update active language in switcher
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            if (lang === 'fr') {
+                document.querySelector('.language-option:nth-child(1)').classList.add('active');
+            } else {
+                document.querySelector('.language-option:nth-child(2)').classList.add('active');
+            }
+            
+            // Hide switcher after selection
+            document.getElementById('fallbackLanguageSwitcher').classList.remove('show');
+            
+            // In a real implementation, this would trigger actual translation
+            // For now, we just show the notice
+        }
+        
+        // Hide translation notice
+        function hideTranslationNotice() {
+            document.getElementById('translationNotice').classList.remove('show');
+        }
+        
+        // Initialize Google Translate
+        window.onload = function() {
+            // Check if Google Translate is loaded
+            setTimeout(() => {
+                const googleTranslateElement = document.querySelector('.goog-te-gadget');
+                if (!googleTranslateElement) {
+                    // Google Translate failed to load, show fallback
+                    document.getElementById('fallbackLanguageSwitcher').classList.add('show');
+                }
+            }, 2000);
+            
+            // Show translation notice when page loads in a different language
+            const currentLang = document.documentElement.lang;
+            const browserLang = navigator.language || navigator.userLanguage;
+            
+            if (currentLang !== browserLang.substring(0, 2)) {
+                setTimeout(() => {
+                    document.getElementById('translationNotice').classList.add('show');
+                }, 3000);
+            }
+        };
+        
+        // Close language switcher when clicking outside
+        document.addEventListener('click', function(event) {
+            const switcher = document.getElementById('fallbackLanguageSwitcher');
+            const toggleBtn = document.querySelector('[onclick="toggleLanguageSwitcher()"]');
+            
+            if (switcher.classList.contains('show') && 
+                !switcher.contains(event.target) && 
+                !toggleBtn.contains(event.target)) {
+                switcher.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

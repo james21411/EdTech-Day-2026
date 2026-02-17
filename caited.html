@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAITED 2026 – Avancées en Informatique et Technologies Éducatives pour une Société et un Développement
+        Durables</title>
+    <meta name="description"
+        content="Conférence sur les avancées en informatique et technologies éducatives pour une société et un développement durables, École Normale Supérieure, Université de Yaoundé I, Mai 2026, Yaoundé, Cameroun - Format hybride (présentiel + en ligne).">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --accent-color: #4cc9f0;
+            --purple-gradient: linear-gradient(135deg, #4361ee, #3a0ca3);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            padding-top: 80px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .site-switcher-bar {
+            background-color: #1a1a2e;
+            padding: 8px 0;
+            font-size: 13px;
+            color: white;
+            z-index: 2000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .site-switcher-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .site-tab {
+            padding: 4px 15px;
+            border-radius: 20px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .site-tab:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .site-tab.active {
+            background: var(--purple-gradient);
+            color: white;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/1080?random=200');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .date-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .first-edition-badge {
+            border: 2px solid white;
+            padding: 5px 15px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .organizers-banner {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .btn-register {
+            background: var(--purple-gradient);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+        }
+
+        .teacher-card {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            background: white;
+        }
+
+        .teacher-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .teacher-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .committee-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .committee-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Site Switcher Bar -->
+    <div class="site-switcher-bar">
+        <div class="container site-switcher-container">
+            <a href="caited.html" class="site-tab active"><i class="bi bi-briefcase-fill me-2"></i>CAITED Conference</a>
+            <a href="index.html" class="site-tab"><i class="bi bi-laptop me-2"></i>EdTech Day 2026</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" style="top: 35px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--primary-color); font-weight: 700;">CAITED</span>
+                <span style="color: var(--accent-color); font-weight: 700;">2026</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#soumission">Soumission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programme">Programme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Conférenciers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inscription">Inscription</a></li>
+                    <li class="nav-item ms-2"><button class="btn btn-register">S'inscrire</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="date-badge mb-3">8 - 10 Juin 2026</span>
+                    <h1 class="display-4 fw-bold mb-3">CAITED 2026</h1>
+                    <div class="first-edition-badge mb-3">Première Édition</div>
+                    <p class="lead mb-4">Avancées en Informatique et Technologies Éducatives pour une Société et un
+                        Développement Durables</p>
+
+                    <div class="organizers-banner mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h5 class="fw-bold mb-2">Institution hôte : LITE / ENS</h5>
+                                <p class="mb-0">Université de Yaoundé I – Cameroun | Format Hybride</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap">
+                        <button class="btn btn-register me-3 mb-2">S'inscrire Maintenant</button>
+                        <button class="btn btn-outline-light mb-2">Soumettre un article</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers -->
+    <section id="speakers" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Conférenciers Principaux</h2>
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <div class="teacher-image"><img src="https://picsum.photos/400/300?random=1" alt="A venir"></div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">A venir...</h3>
+                        <p class="text-muted">🇺🇸 Keynote Speaker</p>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image"><img src="https://picsum.photos/400/300?random=2"
+                            alt="Anastasija NIKIFOROVA"></div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Anastasija NIKIFOROVA</h3>
+                        <p class="text-muted">🇪🇪 AI and Tech for Society</p>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image"><img src="https://picsum.photos/400/300?random=3" alt="Alain TCHANA">
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Alain TCHANA</h3>
+                        <p class="text-muted">🇫🇷 ENSIMAG-INP Grenoble</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

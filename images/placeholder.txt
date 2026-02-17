@@ -1,0 +1,19 @@
+PLACEHOLDER - REMPLACEZ PAR VOS VRAIES IMAGES
+
+Pour que le site fonctionne correctement avec vos vraies images, remplacez les fichiers suivants :
+
+1. logo-ens.png - Logo officiel de l'ENS (format PNG recommandé)
+2. hero-bg.jpg - Image de fond pour la section hero (format JPG, 1920x1080px minimum)
+3. about-bg.jpg - Image de fond pour la section à propos
+4. contact-bg.jpg - Image de fond pour la section contact
+5. team-1.jpg à team-4.jpg - Photos des membres de l'équipe
+6. news-1.jpg à news-3.jpg - Images pour les actualités
+7. formation-licence.jpg, formation-master.jpg, formation-doctorat.jpg - Images pour les formations
+
+Recommandations :
+- Utilisez des images de haute qualité
+- Optimisez les images pour le web (compression)
+- Gardez les mêmes noms de fichiers
+- Formats recommandés : PNG pour logos, JPG pour photos
+
+Le site fonctionnera même sans ces images grâce aux fallbacks intégrés. 
