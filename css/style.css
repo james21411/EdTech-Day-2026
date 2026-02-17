@@ -163,6 +163,7 @@
           font-size: 1.8rem;
           background: var(--purple-gradient);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
         }
 
@@ -459,27 +460,30 @@
         }
 
         .countdown-box {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(10px);
-          border-radius: 15px;
-          padding: 20px;
+          border-radius: 12px;
+          padding: 15px 5px;
           text-align: center;
-          margin: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          margin: 5px 2px;
+          border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .countdown-number {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
           font-weight: 700;
-          color: white;
-          line-height: 1;
+          color: #ff3131;
+          line-height: 1.2;
         }
 
         .countdown-label {
-          font-size: 0.9rem;
+          font-size: 0.7rem;
+          /* Taille réduite */
           text-transform: uppercase;
-          letter-spacing: 1px;
-          opacity: 0.8;
+          letter-spacing: 0.5px;
+          /* Espacement réduit */
+          color: #2ecc71;
+          font-weight: 700;
         }
 
         .footer {
@@ -504,6 +508,7 @@
           margin-bottom: 20px;
           background: var(--blue-gradient);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
         }
 
@@ -584,9 +589,6 @@
         }
 
         /* Skip translation for specific elements */
-        .notranslate {
-          /* Elements that shouldn't be translated */
-        }
 
         /* Hide Google Translate top banner */
         .goog-te-banner-frame {
@@ -607,7 +609,12 @@
           }
 
           .countdown-number {
-            font-size: 2rem;
+            font-size: 1.5rem;
+          }
+
+          .countdown-label {
+            font-size: 0.6rem;
+            letter-spacing: 0;
           }
 
           #google_translate_element {
@@ -1024,168 +1031,4 @@
             padding: 0.7rem 2rem;
             font-size: 0.9rem;
           }
-        }
-        }
-        }
-
-        /* ==========================================
-   SITE SWITCHER TOP BAR
-   ========================================== */
-        .site-switcher-bar {
-          background-color: #1a1a2e;
-          padding: 8px 0;
-          font-size: 13px;
-          color: white;
-          z-index: 2000;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .site-switcher-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .site-tab {
-          padding: 4px 15px;
-          border-radius: 20px;
-          margin: 0 5px;
-          text-decoration: none;
-          color: rgba(255, 255, 255, 0.7);
-          transition: all 0.3s ease;
-          font-weight: 500;
-        }
-
-        .site-tab:hover {
-          color: white;
-          background: rgba(255, 255, 255, 0.1);
-        }
-
-        .site-tab.active {
-          background: var(--purple-gradient);
-          color: white;
-          box-shadow: 0 2px 10px rgba(67, 97, 238, 0.3);
-        }
-
-        .site-tab i {
-          font-size: 14px;
-        }
-
-        /* Adjust navbar for top bar */
-        .navbar {
-          top: 40px !important;
-        }
-
-        @media (max-width: 991px) {
-          .site-switcher-bar {
-            font-size: 11px;
-          }
-
-          .navbar {
-            top: 35px !important;
-          }
-        }
-
-        /* ==========================================
-   CAITED CONFERENCE LIAISON SECTION
-   ========================================== */
-        .caited-liaison-section {
-          padding: 100px 0;
-          background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
-          position: relative;
-        }
-
-        .caited-liaison-card {
-          background: white;
-          border-radius: 30px;
-          padding: 60px;
-          box-shadow: 0 30px 60px rgba(67, 97, 238, 0.1);
-          border: 1px solid rgba(67, 97, 238, 0.05);
-          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .caited-liaison-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 40px 80px rgba(67, 97, 238, 0.15);
-        }
-
-        .caited-badge {
-          background: rgba(67, 97, 238, 0.1);
-          color: var(--primary-color);
-          padding: 8px 20px;
-          border-radius: 30px;
-          font-weight: 600;
-          display: inline-block;
-          margin-bottom: 20px;
-        }
-
-        .caited-title {
-          font-size: 2.5rem;
-          font-weight: 800;
-          margin-bottom: 25px;
-          background: linear-gradient(135deg, #1a1a2e, #4361ee);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .caited-info-item {
-          display: flex;
-          align-items: center;
-          margin-bottom: 15px;
-        }
-
-        .caited-info-item i {
-          width: 40px;
-          height: 40px;
-          background: var(--purple-gradient);
-          color: white;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-right: 15px;
-          flex-shrink: 0;
-        }
-
-        .caited-speakers-preview {
-          display: flex;
-          margin-top: 30px;
-          gap: 15px;
-        }
-
-        .mini-speaker {
-          text-align: center;
-        }
-
-        .mini-speaker img {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          border: 3px solid white;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-visit-caited {
-          background: var(--purple-gradient);
-          color: white;
-          padding: 15px 40px;
-          border-radius: 40px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          display: inline-flex;
-          align-items: center;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          margin-top: 30px;
-        }
-
-        .btn-visit-caited:hover {
-          transform: scale(1.05);
-          box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
-          color: white;
         }

@@ -233,4 +233,37 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    // Logic for "Voir plus d'actualités" button
+    const btnShowMore = document.getElementById('btn-show-more-news');
+    const extraNewsCards = document.querySelectorAll('.news-card-extra');
+
+    if (btnShowMore) {
+        btnShowMore.addEventListener('click', function () {
+            let isHidden = true;
+
+            extraNewsCards.forEach(card => {
+                if (card.classList.contains('d-none')) {
+                    card.classList.remove('d-none');
+                    // Trigger AOS refresh for revealed cards
+                    if (window.AOS) {
+                        AOS.refresh();
+                    }
+                } else {
+                    card.classList.add('d-none');
+                    isHidden = false;
+                }
+            });
+
+            // Update button text and icon
+            if (isHidden) {
+                this.innerHTML = '<i class="bi bi-dash-circle me-2"></i>Voir moins d\'actualités';
+            } else {
+                this.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Voir plus d\'actualités';
+                // Scroll back up to the stats section or top of news if hiding
+                document.getElementById('actualites').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 });
