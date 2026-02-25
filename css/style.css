@@ -180,7 +180,7 @@
         }
 
         .hero-section {
-          background: var(--purple-gradient), url('https://picsum.photos/1920/1080?random=100');
+          background: var(--purple-gradient), url('../images/bg.jpeg');
           background-size: cover;
           background-position: center;
           background-blend-mode: overlay;
