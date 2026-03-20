@@ -23,38 +23,25 @@
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Google Translate API -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'fr',
-        includedLanguages: 'fr,en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Fichiers de traduction i18n (offline) -->
+  <script src="js/fr.js"></script>
+  <script src="js/en.js"></script>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Google Translate Widget -->
-  <div id="google_translate_element"></div>
-
-  <!-- Fallback Language Switcher (hidden by default) -->
+  <!-- Language Switcher (offline i18n) -->
   <div class="language-switcher" id="fallbackLanguageSwitcher">
-    <h6 class="mb-3">Choisir la langue / Choose language</h6>
-    <div class="language-option active" onclick="switchLanguage('fr')">
+    <h6 class="mb-3" data-i18n="lang.switcher.title">Choisir la langue / Choose language</h6>
+    <div class="language-option active" data-lang="fr" onclick="switchLanguage('fr')">
       <img src="https://flagcdn.com/w40/fr.png" class="language-flag" alt="French flag">
-      <span>Français</span>
+      <span data-i18n="lang.fr">Français</span>
     </div>
-    <div class="language-option" onclick="switchLanguage('en')">
+    <div class="language-option" data-lang="en" onclick="switchLanguage('en')">
       <img src="https://flagcdn.com/w40/gb.png" class="language-flag" alt="English flag">
-      <span>English</span>
+      <span data-i18n="lang.en">English</span>
     </div>
   </div>
 
@@ -62,8 +49,10 @@
   <div class="translation-notice" id="translationNotice">
     <div class="d-flex justify-content-between align-items-start">
       <div>
-        <strong><i class="bi bi-translate me-2"></i>Traduction automatique</strong>
-        <p class="mb-0 mt-1">Cette page est traduite automatiquement. Certains termes peuvent ne pas être exacts.</p>
+        <strong><i class="bi bi-translate me-2"></i><span data-i18n="notice.title">Traduction
+            automatique</span></strong>
+        <p class="mb-0 mt-1" data-i18n="notice.text">Cette page est traduite automatiquement. Certains termes peuvent ne
+          pas être exacts.</p>
       </div>
       <button type="button" class="btn-close btn-close-white" onclick="hideTranslationNotice()"></button>
     </div>
@@ -88,31 +77,31 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#accueil">Accueil</a>
+            <a class="nav-link active" href="#accueil" data-i18n="nav.home">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#apropos">À propos</a>
+            <a class="nav-link" href="#apropos" data-i18n="nav.about">À propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#programme">Programme</a>
+            <a class="nav-link" href="#programme" data-i18n="nav.programme">Programme</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#exposition">Exposition</a>
+            <a class="nav-link" href="#exposition" data-i18n="nav.exposition">Exposition</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#hackathon">Hackathon</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#speakers">Conférenciers</a>
+            <a class="nav-link" href="#speakers" data-i18n="nav.speakers">Conférenciers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#ateliers">Ateliers</a>
+            <a class="nav-link" href="#ateliers" data-i18n="nav.workshops">Ateliers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#partenaires">Partenaires</a>
+            <a class="nav-link" href="#partenaires" data-i18n="nav.partners">Partenaires</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#inscription">Inscription</a>
+            <a class="nav-link" href="#inscription" data-i18n="nav.register">Inscription</a>
           </li>
 
           <!-- Language Toggle for Desktop -->
@@ -123,7 +112,8 @@
           </li>
 
           <li class="nav-item ms-2">
-            <button class="btn btn-primary-custom" onclick="scrollToRegistration()">S'inscrire</button>
+            <button class="btn btn-primary-custom" onclick="scrollToRegistration()"
+              data-i18n="nav.register.btn">S'inscrire</button>
           </li>
         </ul>
       </div>
@@ -132,66 +122,75 @@
 
   <!-- Hero Section -->
   <section id="accueil" class="hero-section">
+    <!-- Canvas particules 3D -->
+    <canvas id="hero-canvas"></canvas>
+    <!-- Orbs lumineux flottants -->
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-8" data-aos="fade-right">
           <span class="date-badge notranslate">27-28 Mai 2026</span>
           <span class="location-badge notranslate">Yaoundé, Cameroun</span>
 
-          <h1 class="hero-title">EdTech Day Yaoundé 2026</h1>
-
-          <h2 class="hero-subtitle">Numériser les enseignements à l'ère de l'IA générative : quels leviers d'efficacité
-            au Cameroun ?</h2>
-
-          <p class="lead mb-4">Événement phare des technologies éducatives au Cameroun, organisé conjointement avec la
-            Conférence CAITED. Le 28 Mai 2026 est dédié au Sommet des EdTech à Yaoundé.</p>
+          <h1 class="hero-title" data-i18n="hero.title">EdTech Day Yaoundé 2026</h1>
+          <h2 class="hero-subtitle" data-i18n="hero.subtitle">Numériser les enseignements à l'ère de l'IA générative :
+            quels leviers d'efficacité au Cameroun ?</h2>
+          <p class="lead mb-4" data-i18n="hero.description">Événement phare des technologies éducatives au Cameroun,
+            organisé conjointement avec la Conférence CAITED. Le 28 Mai 2026 est dédié au Sommet des EdTech à Yaoundé.
+          </p>
 
           <div class="d-flex flex-wrap align-items-center mb-5">
-            <button class="btn btn-primary-custom me-3 mb-2" onclick="scrollToRegistration()">S'inscrire
-              Maintenant</button>
-            <a href="#programme" class="btn btn-secondary-custom mb-2">Voir le Programme</a>
+            <button class="btn btn-primary-custom me-3 mb-2" onclick="scrollToRegistration()"
+              data-i18n="hero.btn.register">S'inscrire Maintenant</button>
+            <a href="#programme" class="btn btn-secondary-custom mb-2" data-i18n="hero.btn.programme">Voir le
+              Programme</a>
           </div>
         </div>
 
         <div class="col-lg-4" data-aos="fade-left">
           <div class="bg-white rounded p-4 text-dark shadow-lg">
-            <h5 class="fw-bold mb-3 text-center">Compte à rebours</h5>
+            <h5 class="fw-bold mb-3 text-center" data-i18n="countdown.title">Compte à rebours</h5>
             <div class="row text-center" id="countdown">
               <div class="col-3">
                 <div class="countdown-box">
                   <div class="countdown-number" id="days">00</div>
-                  <div class="countdown-label">Jours</div>
+                  <div class="countdown-label" data-i18n="countdown.days">Jours</div>
                 </div>
               </div>
               <div class="col-3">
                 <div class="countdown-box">
                   <div class="countdown-number" id="hours">00</div>
-                  <div class="countdown-label">Heures</div>
+                  <div class="countdown-label" data-i18n="countdown.hours">Heures</div>
                 </div>
               </div>
               <div class="col-3">
                 <div class="countdown-box">
                   <div class="countdown-number" id="minutes">00</div>
-                  <div class="countdown-label">Minutes</div>
+                  <div class="countdown-label" data-i18n="countdown.minutes">Minutes</div>
                 </div>
               </div>
               <div class="col-3">
                 <div class="countdown-box">
                   <div class="countdown-number" id="seconds">00</div>
-                  <div class="countdown-label">Secondes</div>
+                  <div class="countdown-label" data-i18n="countdown.seconds">Secondes</div>
                 </div>
               </div>
             </div>
 
             <div class="text-center mt-4">
               <p class="small mb-2">
-                <i class="bi bi-calendar-event me-2"></i>27 Mai : Conférence CAITED 2026
+                <i class="bi bi-calendar-event me-2"></i><span data-i18n="countdown.caited">27 Mai : Conférence CAITED
+                  2026</span>
                 <a href="https://james21411.github.io/SITE-CONFENCE/" target="_blank"
                   class="btn btn-sm btn-outline-primary ms-2">
-                  <i class="bi bi-box-arrow-up-right me-1"></i>Voir le site
+                  <i class="bi bi-box-arrow-up-right me-1"></i><span data-i18n="countdown.caited.link">Voir le
+                    site</span>
                 </a>
               </p>
-              <p class="small mb-0"><i class="bi bi-star-fill me-2"></i>28 Mai : Sommet EdTech Yaoundé</p>
+              <p class="small mb-0"><i class="bi bi-star-fill me-2"></i><span data-i18n="countdown.summit">28 Mai :
+                  Sommet EdTech Yaoundé</span></p>
             </div>
           </div>
         </div>
@@ -206,25 +205,25 @@
         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
           <div class="stats-box">
             <div class="stats-number">3</div>
-            <div class="stats-label">Jours d'événement</div>
+            <div class="stats-label" data-i18n="stats.days">Jours d'événement</div>
           </div>
         </div>
         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
           <div class="stats-box">
             <div class="stats-number">50+</div>
-            <div class="stats-label">Entreprises EdTech</div>
+            <div class="stats-label" data-i18n="stats.companies">Entreprises EdTech</div>
           </div>
         </div>
         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
           <div class="stats-box">
             <div class="stats-number">1000+</div>
-            <div class="stats-label">Participants attendus</div>
+            <div class="stats-label" data-i18n="stats.participants">Participants attendus</div>
           </div>
         </div>
         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
           <div class="stats-box">
             <div class="stats-number">30+</div>
-            <div class="stats-label">Conférenciers experts</div>
+            <div class="stats-label" data-i18n="stats.speakers">Conférenciers experts</div>
           </div>
         </div>
       </div>
@@ -238,22 +237,28 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-lg-6" data-aos="fade-right">
-          <h2 class="section-title left-align">À propos de l'événement</h2>
-          <p class="lead">L'EdTech Day Yaoundé 2026 est l'événement de référence dédié aux technologies éducatives au
+          <h2 class="section-title left-align" data-i18n="about.title">À propos de l'événement</h2>
+          <p class="lead" data-i18n="about.lead">L'EdTech Day Yaoundé 2026 est l'événement de référence dédié aux
+            technologies éducatives au
             Cameroun et en Afrique centrale.</p>
 
-          <p>Organisé conjointement avec la <strong>Conférence CAITED 2026 (Conférence sur les Avancées en Informatique et
+          <p data-i18n="about.p1">Organisé conjointement avec la <strong>Conférence CAITED 2026 (Conférence sur les
+              Avancées en Informatique
+              et
               Technologies Éducatives pour le Développement)</strong>, cet événement de trois jours rassemble les
             acteurs clés du secteur éducatif, technologique et entrepreneurial.</p>
 
-          <p>Le <strong>28 Mai 2026</strong> est spécialement dédié au <strong>Sommet des EdTech à Yaoundé</strong>, un
+          <p data-i18n="about.p2">Le <strong>28 Mai 2026</strong> est spécialement dédié au <strong>Sommet des EdTech à
+              Yaoundé</strong>, un
             événement stratégique qui réunit décideurs politiques, investisseurs, entrepreneurs et éducateurs pour
             dessiner l'avenir de l'éducation numérique au Cameroun.</p>
 
           <div class="theme-banner">
-            <h4 class="fw-bold">Thème 2026</h4>
-            <h5>"Numériser les enseignements à l'ère de l'IA générative : quels leviers d'efficacité au Cameroun ?"</h5>
-            <p class="mb-0">Explorer comment l'intelligence artificielle générative peut transformer l'enseignement et
+            <h4 class="fw-bold" data-i18n="about.theme.label">Thème 2026</h4>
+            <h5 data-i18n="about.theme.text">"Numériser les enseignements à l'ère de l'IA générative : quels leviers
+              d'efficacité au Cameroun ?"</h5>
+            <p class="mb-0" data-i18n="about.theme.desc">Explorer comment l'intelligence artificielle générative peut
+              transformer l'enseignement et
               l'apprentissage dans le contexte camerounais.</p>
           </div>
         </div>
@@ -262,9 +267,11 @@
           <div class="card border-0 shadow-lg card-hover">
             <img src="images/Dynamic-logo-CAITED2026.png" alt="Événement EdTech Day Yaoundé">
             <div class="card-body">
-              <h5 class="card-title">Conjointement à la Conférence CAITED 2026</h5>
-              <p class="card-text">La 2ème édition de la EdTech Day de Yaoundé conjointe à la conférence internationale
-                CAITED 2026, crée une synergie unique entre recherche académique et innovation entrepreneuriale orientées vers le développement durable.</p>
+              <h5 class="card-title" data-i18n="about.card.title">Conjointement à la Conférence CAITED 2026</h5>
+              <p class="card-text" data-i18n="about.card.text">La 2ème édition de la EdTech Day de Yaoundé conjointe à
+                la conférence internationale
+                CAITED 2026, crée une synergie unique entre recherche académique et innovation entrepreneuriale
+                orientées vers le développement durable.</p>
 
               <div class="row mt-4">
                 <div class="col-md-6 mb-3">
@@ -274,7 +281,7 @@
                     </div>
                     <div class="ms-3">
                       <h6 class="mb-0">27 Mai</h6>
-                      <small>Conférence CAITED 2026</small>
+                      <small data-i18n="about.day1.label">Conférence CAITED 2026</small>
                     </div>
                   </div>
                 </div>
@@ -285,7 +292,7 @@
                     </div>
                     <div class="ms-3">
                       <h6 class="mb-0">28 Mai</h6>
-                      <small>Sommet EdTech</small>
+                      <small data-i18n="about.day2.label">Sommet EdTech</small>
                     </div>
                   </div>
                 </div>
@@ -298,54 +305,49 @@
       <!-- Objectives -->
       <div class="row mt-5">
         <div class="col-12 text-center mb-5">
-          <h2 class="section-title">Objectifs de l'EdTech Day 2026</h2>
+          <h2 class="section-title" data-i18n="objectives.title">Objectifs de l'EdTech Day 2026</h2>
         </div>
-
         <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
           <div class="card border-0 shadow-sm card-hover h-100">
             <div class="card-body text-center p-4">
-              <div class="feature-icon mx-auto" style="background: var(--purple-gradient);">
-                <i class="bi bi-lightbulb"></i>
-              </div>
-              <h5 class="mt-3">Innovation</h5>
-              <p>Présenter les innovations en IA générative appliquées à l'éducation et leur potentiel pour le Cameroun.
-              </p>
+              <div class="feature-icon mx-auto" style="background: var(--purple-gradient);"><i
+                  class="bi bi-lightbulb"></i></div>
+              <h5 class="mt-3" data-i18n="obj.innovation.title">Innovation</h5>
+              <p data-i18n="obj.innovation.text">Présenter les innovations en IA générative appliquées à l'éducation et
+                leur potentiel pour le Cameroun.</p>
             </div>
           </div>
         </div>
-
         <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
           <div class="card border-0 shadow-sm card-hover h-100">
             <div class="card-body text-center p-4">
-              <div class="feature-icon mx-auto" style="background: var(--blue-gradient);">
-                <i class="bi bi-people-fill"></i>
-              </div>
-              <h5 class="mt-3">Réseautage</h5>
-              <p>Créer des connections entre startups EdTech, investisseurs, éducateurs et décideurs politiques.</p>
+              <div class="feature-icon mx-auto" style="background: var(--blue-gradient);"><i
+                  class="bi bi-people-fill"></i></div>
+              <h5 class="mt-3" data-i18n="obj.networking.title">Réseautage</h5>
+              <p data-i18n="obj.networking.text">Créer des connections entre startups EdTech, investisseurs, éducateurs
+                et décideurs politiques.</p>
             </div>
           </div>
         </div>
-
         <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
           <div class="card border-0 shadow-sm card-hover h-100">
             <div class="card-body text-center p-4">
-              <div class="feature-icon mx-auto" style="background: var(--success-color);">
-                <i class="bi bi-briefcase"></i>
-              </div>
-              <h5 class="mt-3">Business</h5>
-              <p>Faciliter les opportunités d'affaires et les partenariats dans l'écosystème EdTech camerounais.</p>
+              <div class="feature-icon mx-auto" style="background: var(--success-color);"><i
+                  class="bi bi-briefcase"></i></div>
+              <h5 class="mt-3" data-i18n="obj.business.title">Business</h5>
+              <p data-i18n="obj.business.text">Faciliter les opportunités d'affaires et les partenariats dans
+                l'écosystème EdTech camerounais.</p>
             </div>
           </div>
         </div>
-
         <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
           <div class="card border-0 shadow-sm card-hover h-100">
             <div class="card-body text-center p-4">
-              <div class="feature-icon mx-auto" style="background: var(--warning-color);">
-                <i class="bi bi-book-half"></i>
-              </div>
-              <h5 class="mt-3">Formation</h5>
-              <p>Former les enseignants et éducateurs aux outils numériques et à l'IA générative pour l'éducation.</p>
+              <div class="feature-icon mx-auto" style="background: var(--warning-color);"><i
+                  class="bi bi-book-half"></i></div>
+              <h5 class="mt-3" data-i18n="obj.training.title">Formation</h5>
+              <p data-i18n="obj.training.text">Former les enseignants et éducateurs aux outils numériques et à l'IA
+                générative pour l'éducation.</p>
             </div>
           </div>
         </div>
@@ -358,8 +360,9 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Programme des 3 jours</h2>
-          <p class="lead">Un événement riche en conférences, ateliers, démonstrations et networking</p>
+          <h2 class="section-title" data-i18n="programme.title">Programme des 3 jours</h2>
+          <p class="lead" data-i18n="programme.lead">Un événement riche en conférences, ateliers, démonstrations et
+            networking</p>
         </div>
       </div>
 
@@ -368,17 +371,20 @@
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="day1-tab" data-bs-toggle="pill" data-bs-target="#day1-content"
             type="button">
-            <i class="bi bi-calendar-day me-2"></i>Jour 1<br><small>8 Juin - Conférence CAITED</small>
+            <i class="bi bi-calendar-day me-2"></i><span data-i18n="programme.day1.tab">Jour 1</span><br><small
+              data-i18n="programme.day1.sub">8 Juin - Conférence CAITED</small>
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="day2-tab" data-bs-toggle="pill" data-bs-target="#day2-content" type="button">
-            <i class="bi bi-calendar-day me-2"></i>Jour 2<br><small>9 Juin - Conférence CAITED</small>
+            <i class="bi bi-calendar-day me-2"></i><span data-i18n="programme.day2.tab">Jour 2</span><br><small
+              data-i18n="programme.day2.sub">9 Juin - Conférence CAITED</small>
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="day3-tab" data-bs-toggle="pill" data-bs-target="#day3-content" type="button">
-            <i class="bi bi-star-fill me-2"></i>Jour 3<br><small>10 Juin - Sommet EdTech</small>
+            <i class="bi bi-star-fill me-2"></i><span data-i18n="programme.day3.tab">Jour 3</span><br><small
+              data-i18n="programme.day3.sub">10 Juin - Sommet EdTech</small>
           </button>
         </li>
       </ul>
@@ -522,8 +528,9 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Vitrine d'Exposition EdTech</h2>
-          <p class="lead">Découvrez les solutions innovantes des startups et entreprises EdTech</p>
+          <h2 class="section-title" data-i18n="expo.title">Vitrine d'Exposition EdTech</h2>
+          <p class="lead" data-i18n="expo.lead">Découvrez les solutions innovantes des startups et entreprises EdTech
+          </p>
         </div>
       </div>
 
@@ -633,8 +640,9 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Hackathon EdTech 2026</h2>
-          <p class="lead">48 heures pour développer des solutions innovantes pour l'éducation camerounaise</p>
+          <h2 class="section-title" data-i18n="hack.title">Hackathon EdTech 2026</h2>
+          <p class="lead" data-i18n="hack.lead">48 heures pour développer des solutions innovantes pour l'éducation
+            camerounaise</p>
         </div>
       </div>
 
@@ -1218,8 +1226,9 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Conférenciers & Panélistes</h2>
-          <p class="lead">Experts internationaux et locaux en technologies éducatives et IA</p>
+          <h2 class="section-title" data-i18n="speakers.title">Conférenciers &amp; Panélistes</h2>
+          <p class="lead" data-i18n="speakers.lead">Experts internationaux et locaux en technologies éducatives et IA
+          </p>
         </div>
       </div>
 
@@ -1295,8 +1304,9 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Démonstrations & Ateliers</h2>
-          <p class="lead">Sessions pratiques pour découvrir et maîtriser les outils EdTech</p>
+          <h2 class="section-title" data-i18n="workshops.title">Démonstrations &amp; Ateliers</h2>
+          <p class="lead" data-i18n="workshops.lead">Sessions pratiques pour découvrir et maîtriser les outils EdTech
+          </p>
         </div>
       </div>
 
@@ -1357,8 +1367,8 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Partenaires & Sponsors</h2>
-          <p class="lead">Organisations qui soutiennent l'EdTech Day Yaoundé 2026</p>
+          <h2 class="section-title" data-i18n="partners.title">Partenaires &amp; Sponsors</h2>
+          <p class="lead" data-i18n="partners.lead">Organisations qui soutiennent l'EdTech Day Yaoundé 2026</p>
         </div>
       </div>
 
@@ -1422,8 +1432,8 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-12 text-center">
-          <h2 class="section-title">Inscription</h2>
-          <p class="lead">Réservez votre place pour l'EdTech Day Yaoundé 2026</p>
+          <h2 class="section-title" data-i18n="register.title">Inscription</h2>
+          <p class="lead" data-i18n="register.lead">Réservez votre place pour l'EdTech Day Yaoundé 2026</p>
         </div>
       </div>
 
@@ -1760,11 +1770,12 @@
 
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+  <!-- Traductions i18n (chargées dans le <head>) -->
   <script src="js/script.js"></script>
+  <!-- Animations 3D premium -->
+  <script src="js/animations3d.js"></script>
   <!-- Section Modales 2025 -->
   <!-- Modales pour les détails des événements -->
 

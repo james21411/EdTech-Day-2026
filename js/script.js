@@ -1,11 +1,84 @@
-// Initialize AOS
-AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
-});
+// ============================================================
+//  MOTEUR I18N OFFLINE - EdTech Day Yaoundé 2026
+//  Gère le changement de langue FR ↔ EN sans connexion internet
+//  Les textes sont chargés depuis js/fr.js et js/en.js
+// ============================================================
 
-// Countdown Timer
+// ── 1. ÉTAT DE LA LANGUE ─────────────────────────────────────
+let currentLang = localStorage.getItem('edtech_lang') || 'fr';
+
+// ── 2. FONCTION DE TRADUCTION ────────────────────────────────
+function t(key) {
+    const dict = currentLang === 'en' ? TRANSLATIONS_EN : TRANSLATIONS_FR;
+    return dict[key] || key;
+}
+
+// ── 3. APPLIQUER LES TRADUCTIONS ─────────────────────────────
+function applyTranslations() {
+    // Mettre à jour la langue du document
+    document.documentElement.lang = currentLang;
+    document.title = t('page.title');
+
+    // Mettre à jour tous les éléments avec data-i18n (textContent)
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.innerHTML = t(key);
+    });
+
+    // Mettre à jour les placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+    });
+
+    // Mettre à jour les titres (title attribute)
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+        el.title = t(el.getAttribute('data-i18n-title'));
+    });
+
+    // Mettre à jour le bouton actif dans le switcher
+    document.querySelectorAll('.language-option').forEach(opt => {
+        opt.classList.remove('active');
+    });
+    const activeOpt = document.querySelector(`.language-option[data-lang="${currentLang}"]`);
+    if (activeOpt) activeOpt.classList.add('active');
+
+    // Mettre à jour le bouton countdown si événement démarré
+    const cdEl = document.getElementById('countdown');
+    if (cdEl && cdEl.querySelector('.text-success')) {
+        cdEl.innerHTML = `<div class="col-12"><h4 class="text-success">${t('countdown.started')}</h4></div>`;
+    }
+
+    // Mettre à jour le texte du bouton "voir plus"
+    const btnMore = document.getElementById('btn-show-more-news');
+    if (btnMore) {
+        const isExpanded = !document.querySelector('.news-card-extra.d-none');
+        btnMore.innerHTML = isExpanded
+            ? `<i class="bi bi-dash-circle me-2"></i>${t('actu.less.btn')}`
+            : `<i class="bi bi-plus-circle me-2"></i>${t('actu.more.btn')}`;
+    }
+}
+
+// ── 4. CHANGER DE LANGUE ──────────────────────────────────────
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('edtech_lang', lang);
+    applyTranslations();
+
+    // Fermer le panneau switcher
+    document.getElementById('fallbackLanguageSwitcher').classList.remove('show');
+}
+
+// ── 5. TOGGLE DU PANNEAU ──────────────────────────────────────
+function toggleLanguageSwitcher() {
+    document.getElementById('fallbackLanguageSwitcher').classList.toggle('show');
+}
+
+// Cacher la notice de traduction
+function hideTranslationNotice() {
+    document.getElementById('translationNotice')?.classList.remove('show');
+}
+
+// ── 6. COUNTDOWN ─────────────────────────────────────────────
 function updateCountdown() {
     const eventDate = new Date('June 8, 2026 09:00:00').getTime();
     const now = new Date().getTime();
@@ -22,248 +95,166 @@ function updateCountdown() {
         document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
         document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     } else {
-        document.getElementById('countdown').innerHTML = '<div class="col-12"><h4 class="text-success">L\'événement a commencé !</h4></div>';
+        document.getElementById('countdown').innerHTML =
+            `<div class="col-12"><h4 class="text-success">${t('countdown.started')}</h4></div>`;
     }
 }
 
-// Update countdown every second
 setInterval(updateCountdown, 1000);
-updateCountdown(); // Initial call
+updateCountdown();
 
-// Smooth scrolling for navigation links
+// ── 7. SCROLL FLUIDE ──────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-
-            // Update active nav link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
+        const target = document.querySelector(targetId);
+        if (target) {
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
             this.classList.add('active');
         }
     });
 });
 
-// Update active nav link on scroll
+// ── 8. NAV ACTIVE AU SCROLL ───────────────────────────────────
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 100;
-
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        const top = section.offsetTop;
+        const height = section.clientHeight;
+        const id = section.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
             });
         }
     });
 });
 
-// Scroll to registration function
+// ── 9. SCROLL VERS INSCRIPTION ───────────────────────────────
 function scrollToRegistration() {
-    const registrationSection = document.getElementById('inscription');
-    if (registrationSection) {
-        window.scrollTo({
-            top: registrationSection.offsetTop - 80,
-            behavior: 'smooth'
-        });
-    }
+    const el = document.getElementById('inscription');
+    if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
 }
 
-// Form submission handlers
-document.getElementById('expositionForm')?.addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Demande de stand envoyée avec succès ! Nous vous contacterons dans les 48h.');
-    bootstrap.Modal.getInstance(document.getElementById('expositionModal')).hide();
-});
-
-document.getElementById('hackathonForm')?.addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Inscription au Hackathon envoyée avec succès !');
-    bootstrap.Modal.getInstance(document.getElementById('hackathonModal')).hide();
-});
-
-document.getElementById('sponsorForm')?.addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Demande de partenariat envoyée avec succès !');
-    bootstrap.Modal.getInstance(document.getElementById('sponsorModal')).hide();
-});
-
-document.getElementById('contactForm')?.addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Message envoyé avec succès !');
-    bootstrap.Modal.getInstance(document.getElementById('contactModal')).hide();
-});
-
-// Ticket registration function
+// ── 10. TICKETS ───────────────────────────────────────────────
 function registerTicket(type) {
-    const ticketTypes = {
-        'student': 'Étudiant (15 000 FCFA)',
-        'professional': 'Professionnel (50 000 FCFA)',
-        'company': 'Entreprise (200 000 FCFA)'
+    const keys = {
+        'student': 'ticket.alert.student',
+        'professional': 'ticket.alert.professional',
+        'company': 'ticket.alert.company'
     };
-
-    alert(`Inscription au forfait ${ticketTypes[type]} enregistrée ! Vous allez être redirigé vers la page de paiement.`);
-    // In a real implementation, this would redirect to a payment page
+    const typeLabel = t(keys[type]);
+    const msg = t('ticket.alert.msg').replace('{type}', typeLabel);
+    alert(msg);
 }
 
-// Language Translation Functions
-
-// Toggle language switcher
-function toggleLanguageSwitcher() {
-    const switcher = document.getElementById('fallbackLanguageSwitcher');
-    switcher.classList.toggle('show');
-}
-
-// Switch language (fallback function)
-function switchLanguage(lang) {
-    const notice = document.getElementById('translationNotice');
-    notice.classList.add('show');
-
-    // Update active language in switcher
-    document.querySelectorAll('.language-option').forEach(option => {
-        option.classList.remove('active');
-    });
-
-    if (lang === 'fr') {
-        document.querySelector('.language-option:nth-child(1)').classList.add('active');
-    } else {
-        document.querySelector('.language-option:nth-child(2)').classList.add('active');
-    }
-
-    // Hide switcher after selection
-    document.getElementById('fallbackLanguageSwitcher').classList.remove('show');
-
-    // In a real implementation, this would trigger actual translation
-    // For now, we just show the notice
-}
-
-// Hide translation notice
-function hideTranslationNotice() {
-    document.getElementById('translationNotice').classList.remove('show');
-}
-
-// Initialize Google Translate
-window.onload = function () {
-    // Check if Google Translate is loaded
-    setTimeout(() => {
-        const googleTranslateElement = document.querySelector('.goog-te-gadget');
-        if (!googleTranslateElement) {
-            // Google Translate failed to load, show fallback
-            document.getElementById('fallbackLanguageSwitcher').classList.add('show');
-        }
-    }, 2000);
-
-    // Show translation notice when page loads in a different language
-    const currentLang = document.documentElement.lang;
-    const browserLang = navigator.language || navigator.userLanguage;
-
-    if (currentLang !== browserLang.substring(0, 2)) {
-        setTimeout(() => {
-            document.getElementById('translationNotice').classList.add('show');
-        }, 3000);
-    }
-};
-
-// Close language switcher when clicking outside
+// ── 11. FERMER LE SWITCHER EN CLIQUANT AILLEURS ───────────────
 document.addEventListener('click', function (event) {
     const switcher = document.getElementById('fallbackLanguageSwitcher');
-    const toggleBtn = document.querySelector('[onclick="toggleLanguageSwitcher()"]');
+    if (!switcher || !switcher.classList.contains('show')) return;
 
-    if (switcher.classList.contains('show') &&
-        !switcher.contains(event.target) &&
-        !toggleBtn.contains(event.target)) {
+    // Il peut y avoir plusieurs boutons FR/EN (mobile + desktop)
+    const toggleBtns = document.querySelectorAll('[onclick="toggleLanguageSwitcher()"]');
+    const clickedAToggle = Array.from(toggleBtns).some(btn => btn.contains(event.target));
+
+    // Fermer seulement si le clic est en dehors du panneau ET en dehors de tous les boutons
+    if (!switcher.contains(event.target) && !clickedAToggle) {
         switcher.classList.remove('show');
     }
 });
 
-/* ==========================================
-   LOGIQUE ÉDITION 2025
-   ========================================== */
+// ── 12. DOMCONTENTLOADED ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
-    // Mapping des modales 2025
-    const buttons2025 = document.querySelectorAll('.edition-2025 .actualite-card .btn-outline-primary');
-    const modalIds2025 = [
-        'modal-creation',
-        'modal-debat-ia',
-        'modal-debat-integration',
-        'modal-demo-evaluation',
-        'modal-demo-lecon',
-        'modal-vainqueurs'
-    ];
 
-    buttons2025.forEach((button, index) => {
-        if (index < modalIds2025.length) {
-            button.setAttribute('data-bs-toggle', 'modal');
-            button.setAttribute('data-bs-target', `#${modalIds2025[index]}`);
-            // Empêcher le comportement par défaut du lien
-            button.addEventListener('click', (e) => e.preventDefault());
-        }
+    // Initialiser AOS
+    AOS.init({ duration: 800, once: true, offset: 100 });
+
+    // Appliquer les traductions au chargement
+    applyTranslations();
+
+    // Formulaires
+    document.getElementById('expositionForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert(t('modal.expo.alert'));
+        bootstrap.Modal.getInstance(document.getElementById('expositionModal'))?.hide();
     });
 
-    // Animation d'entrée pour les modales (appliquée à toutes pour la cohérence)
-    const allModals = document.querySelectorAll('.modal');
-    allModals.forEach(modal => {
-        modal.addEventListener('show.bs.modal', function () {
-            const modalContent = this.querySelector('.modal-content');
-            if (modalContent) {
-                modalContent.style.transform = 'scale(0.7)';
-                modalContent.style.opacity = '0';
+    document.getElementById('hackathonForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert(t('modal.hack.alert'));
+        bootstrap.Modal.getInstance(document.getElementById('hackathonModal'))?.hide();
+    });
 
+    document.getElementById('sponsorForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert(t('modal.sponsor.alert'));
+        bootstrap.Modal.getInstance(document.getElementById('sponsorModal'))?.hide();
+    });
+
+    document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert(t('modal.contact.alert'));
+        bootstrap.Modal.getInstance(document.getElementById('contactModal'))?.hide();
+    });
+
+    // Animations modales
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('show.bs.modal', function () {
+            const content = this.querySelector('.modal-content');
+            if (content) {
+                content.style.transform = 'scale(0.7)';
+                content.style.opacity = '0';
                 setTimeout(() => {
-                    modalContent.style.transition = 'all 0.3s ease';
-                    modalContent.style.transform = 'scale(1)';
-                    modalContent.style.opacity = '1';
+                    content.style.transition = 'all 0.3s ease';
+                    content.style.transform = 'scale(1)';
+                    content.style.opacity = '1';
                 }, 10);
             }
         });
     });
-    // Logic for "Voir plus d'actualités" button
+
+    // Bouton "Voir plus d'actualités"
     const btnShowMore = document.getElementById('btn-show-more-news');
-    const extraNewsCards = document.querySelectorAll('.news-card-extra');
+    const extraCards = document.querySelectorAll('.news-card-extra');
 
     if (btnShowMore) {
         btnShowMore.addEventListener('click', function () {
             let isHidden = true;
-
-            extraNewsCards.forEach(card => {
+            extraCards.forEach(card => {
                 if (card.classList.contains('d-none')) {
                     card.classList.remove('d-none');
-                    // Trigger AOS refresh for revealed cards
-                    if (window.AOS) {
-                        AOS.refresh();
-                    }
+                    if (window.AOS) AOS.refresh();
                 } else {
                     card.classList.add('d-none');
                     isHidden = false;
                 }
             });
+            this.innerHTML = isHidden
+                ? `<i class="bi bi-dash-circle me-2"></i>${t('actu.less.btn')}`
+                : `<i class="bi bi-plus-circle me-2"></i>${t('actu.more.btn')}`;
 
-            // Update button text and icon
-            if (isHidden) {
-                this.innerHTML = '<i class="bi bi-dash-circle me-2"></i>Voir moins d\'actualités';
-            } else {
-                this.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Voir plus d\'actualités';
-                // Scroll back up to the stats section or top of news if hiding
-                document.getElementById('actualites').scrollIntoView({
-                    behavior: 'smooth'
-                });
+            if (!isHidden) {
+                document.getElementById('actualites')?.scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
+
+    // Mapping modales 2025
+    const buttons2025 = document.querySelectorAll('.edition-2025 .actualite-card .btn-outline-primary');
+    const modalIds2025 = [
+        'modal-creation', 'modal-debat-ia', 'modal-debat-integration',
+        'modal-demo-evaluation', 'modal-demo-lecon', 'modal-vainqueurs'
+    ];
+    buttons2025.forEach((button, index) => {
+        if (index < modalIds2025.length) {
+            button.setAttribute('data-bs-toggle', 'modal');
+            button.setAttribute('data-bs-target', `#${modalIds2025[index]}`);
+            button.addEventListener('click', e => e.preventDefault());
+        }
+    });
 });
