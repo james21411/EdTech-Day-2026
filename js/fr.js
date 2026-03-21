@@ -346,4 +346,33 @@ const TRANSLATIONS_FR = {
     "ticket.alert.professional": "Professionnel (50 000 FCFA)",
     "ticket.alert.company": "Entreprise (200 000 FCFA)",
     "ticket.alert.msg": "Inscription au forfait {type} enregistrée ! Vous allez être redirigé vers la page de paiement.",
+
+    // ── NEW ENTRIES / PLACEHOLDERS ───────────────────────────
+    "speakers.keynote.title": "Conférenciers Principaux (Keynote Speakers)",
+    "speakers.keynote.lead": "Experts internationaux en informatique et technologies éducatives",
+    "speaker.country.cm": "Cameroun",
+    "speaker.specialty.it": "Expert en informatique et technologies éducatives",
+    "speaker.btn.details": "Voir les détails - Conférencier Principal",
+
+    "placeholder.image": "Image à venir",
+    "placeholder.info": "Informations à venir...",
+    "placeholder.domain": "Domaine : À venir",
+    "placeholder.level": "Niveau : À venir",
+    "placeholder.hours": "-- heures",
+
+    "expo.ph1": "Exposant 1",
+    "expo.ph2": "Exposant 2",
+    "expo.ph3": "Exposant 3",
+    "expo.ph4": "Exposant 4",
+    "expo.ph5": "Exposant 5",
+    "expo.ph6": "Exposant 6",
+
+    "ws.ph1": "Atelier/Démo 1",
+    "ws.ph2": "Atelier/Démo 2",
+    "ws.ph3": "Atelier/Démo 3",
+
+    "partners.institutional": "Partenaires Institutionnels",
+    "partners.tech": "Partenaires Industrie Tech",
+    "partners.publication": "Partenaires de Publication",
+    "partners.media": "Partenaires Médias"
 };

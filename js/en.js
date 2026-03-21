@@ -346,4 +346,33 @@ const TRANSLATIONS_EN = {
     "ticket.alert.professional": "Professional (50,000 FCFA)",
     "ticket.alert.company": "Company (200,000 FCFA)",
     "ticket.alert.msg": "Registration for {type} package confirmed! You will be redirected to the payment page.",
+
+    // ── NEW ENTRIES / PLACEHOLDERS ───────────────────────────
+    "speakers.keynote.title": "Keynote Speakers",
+    "speakers.keynote.lead": "International experts in computer science and educational technologies",
+    "speaker.country.cm": "Cameroon",
+    "speaker.specialty.it": "Computer Science and Educational Technologies Expert",
+    "speaker.btn.details": "View Details - Keynote Speaker",
+
+    "placeholder.image": "Image coming soon",
+    "placeholder.info": "Information coming soon...",
+    "placeholder.domain": "Domain: Upcoming",
+    "placeholder.level": "Level: Upcoming",
+    "placeholder.hours": "-- hours",
+
+    "expo.ph1": "Exhibitor 1",
+    "expo.ph2": "Exhibitor 2",
+    "expo.ph3": "Exhibitor 3",
+    "expo.ph4": "Exhibitor 4",
+    "expo.ph5": "Exhibitor 5",
+    "expo.ph6": "Exhibitor 6",
+
+    "ws.ph1": "Workshop/Demo 1",
+    "ws.ph2": "Workshop/Demo 2",
+    "ws.ph3": "Workshop/Demo 3",
+
+    "partners.institutional": "Institutional Partners",
+    "partners.tech": "Tech Industry Partners",
+    "partners.publication": "Publication Partners",
+    "partners.media": "Media Partners"
 };
