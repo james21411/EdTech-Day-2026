@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAITED 2026 – Avancées en Informatique et Technologies Éducatives pour une Société et un Développement Durables</title>
+    <meta name="description" content="Conférence sur les avancées en informatique et technologies éducatives pour une société et un développement durables, École Normale Supérieure, Université de Yaoundé I, Mai 2026, Yaoundé, Cameroun - Format hybride (présentiel + en ligne).">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--primary-color);">CAITED</span>
+                <span style="color: var(--accent-color);">2026</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#soumission">Soumission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programme">Programme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#speakers">Conférenciers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inscription">Inscription</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-register" onclick="scrollToRegistration()">S'inscrire</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="date-badge mb-3">Juin 2026</span>
+                <h1 class="display-5 fw-bold mb-3"><span class="text-reveal animate-fade-in text-rainbow">CAITED 2026</span></h1>
+                    <div class="first-edition-badge mb-3">Première Édition</div>
+                    <p class="lead mb-4">Conférence sur les Avancées en Informatique et Technologies Éducatives pour une Société et un Développement Durables</p>
+                    <p class="mb-4">Thème : "Innover dans le domaine de l'informatique et des technologies éducatives pour un avenir durable"</p>
+                    
+                    <!-- Organizers Banner -->
+                    <div class="organizers-banner mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="fw-bold mb-2">Institution hôte :</h4>
+                                <div class="d-flex flex-wrap align-items-center">
+                                    <div class="me-4 mb-2">
+                                        <h5 class="mb-0">LITE</h5>
+                                        <p class="mb-0 small">Laboratoire d'Informatique et des Technologies Éducatives</p>
+                                    </div>
+                                    <div class="mb-2">
+                                        <h5 class="mb-0">ENS</h5>
+                                        <p class="mb-0 small">École Normale Supérieure, Université de Yaoundé I – Cameroun</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="bg-white rounded p-2 d-inline-block">
+                                    <div class="text-dark fw-bold">Format</div>
+                                    <div class="text-primary fw-bold">Hybride</div>
+                                    <div class="small text-dark">(Présentiel + En ligne)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="d-flex flex-wrap align-items-center mb-4">
+                        <button class="btn btn-register me-3 mb-2" onclick="scrollToRegistration()">S'inscrire Maintenant</button>
+                        <a href="#soumission" class="btn btn-outline-register mb-2">Soumettre un article</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-white rounded p-4 text-dark countdown-container animate-bounce-in">
+                        <h5 class="fw-bold mb-3">Compte à rebours</h5>
+                        <div class="row text-center" id="countdown">
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="days">00</div>
+                                    <div class="countdown-label">Jours</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="hours">00</div>
+                                    <div class="countdown-label">Heures</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="minutes">00</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="seconds">00</div>
+                                    <div class="countdown-label">Secondes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steering Committee Section -->
+    <section class="teachers-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Présidents d'Honneur (provisoire)</h2>
+                <!-- <p class="section-subtDécouvrez les membres de notre comité de pilotagitle">Découvrez les membres de notre comité de pilotage</p> -->
+            </div>
+            
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <div class="teacher-photo-placeholder">
+                            <i class="bi bi-person-circle text-muted"></i>
+                            <small class="text-muted">Photo à venir</small>
+                        </div>
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="bissa-emana" data-section="pilotage">
+                                Voir les détails - Comité de Pilotage
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Prof. Patricia BISSA EMANA</h3>
+                        <p class="teacher-title">Présidente</p>
+                        <p class="teacher-specialty">Directrice ENS Yaoundé</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:patricia.bissa@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="#" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/fouda.jpeg" alt="Prof. Marcel L. FOUDA NDJODO">
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="fouda" data-section="pilotage">
+                                Voir les détails - Comité de Pilotage
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Prof. Marcel L. FOUDA NDJODO</h3>
+                        <p class="teacher-title">Co-Président</p>
+                        <p class="teacher-specialty">Responsable LITE</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:marcel.fouda@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/marcel-fouda" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/marcel-fouda" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/ngnoulaye.jpeg" alt="Janvier GNOULAYE">
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="ngnoulaye" data-section="pilotage">
+                                Voir les détails - Comité de Pilotage
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Janvier GNOULAYE</h3>
+                        <p class="teacher-title">Membre</p>
+                        <p class="teacher-specialty">DITE, ENS, Université de Yaoundé 1</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:janvier.gnoulaye@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/janvier-gnoulaye" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/janvier-gnoulaye" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/tekouabou.jpeg" alt="Stéphane C. K. TEKOUABOU">
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="tekouabou" data-section="pilotage">
+                                Voir les détails - Comité de Pilotage
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Stéphane C. K. TEKOUABOU</h3>
+                        <p class="teacher-title">Membre</p>
+                        <p class="teacher-specialty">DITE, ENS, Université de Yaoundé 1</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:stephan.tekouabou@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/stephan-tekouabou" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/stephan-tekouabou" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Banner - MASQUÉE -->
+    <!-- <section class="container my-5">
+        <div class="theme-banner">
+            <div class="row align-items-center">
+                <div class="col-lg-2 text-center">
+                    <i class="bi bi-lightbulb display-1"></i>
+                </div>
+                <div class="col-lg-10">
+                    <h2 class="fw-bold">Thème de la Conférence</h2>
+                    <h3 class="fw-bold">"Innover dans le domaine de l'informatique et des technologies éducatives pour un avenir durable"</h3>
+                    <p class="mb-0 mt-3">Explorer comment les innovations technologiques peuvent contribuer aux objectifs de développement durable à travers l'éducation et la formation.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <h2 class="section-title ocean">À propos</h2>
+                    <p>La 1ère Conférence sur les Avancées en Informatique et Technologies Éducatives (EdTech) pour le Développement Durable (CAITED) vise à rassembler les chercheurs, éducateurs, technologues et décideurs pour explorer l'intersection de l'informatique, de l'EdTech et des objectifs de développement durable (ODD).</p>
+                    <p>Elle sert de plateforme pour le dialogue interdisciplinaire entre les informaticiens, les spécialistes de l'éducation, les praticiens du développement et les experts Tech 4 Society.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="info-card p-3 rounded h-100">
+                                <h5><i class="bi bi-geo-alt me-2"></i> Lieu</h5>
+                                <p class="mb-0">Université de Yaoundé I<br>Yaoundé, Cameroun</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="info-card p-3 rounded h-100">
+                                <h5><i class="bi bi-calendar-event me-2"></i> Dates</h5>
+                                <p class="mb-0">Début Juin 2026<br>Yaoundé, Cameroun</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Partenaires de Publication -->
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <h3 class="section-title">Partenaires de Publication</h3>
+                            <div class="row">
+                                <div class="col-md-4 mb-3 text-center">
+                                    <img src="images/edp.png" alt="EDP Science" class="img-fluid" style="max-height: 60px;">
+                                    <p class="small mt-2 mb-0">EDP Science<br><span class="text-muted">E3S Web of Conference</span></p>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <img src="images/springer.png" alt="Springer" class="img-fluid" style="max-height: 60px;">
+                                    <p class="small mt-2 mb-0">Springer<br><span class="text-muted">Springer Book</span></p>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <img src="images/data an policy.png" alt="Data & Policy" class="img-fluid" style="max-height: 60px;">
+                                    <p class="small mt-2 mb-0">Data & Policy<br><span class="text-muted">Cambridge University Press</span></p>
+                                </div>
+                                <div class="col-md-6 mb-3 text-center">
+                                    <img src="images/mdpi.png" alt="MDPI" class="img-fluid" style="max-height: 60px;">
+                                    <p class="small mt-2 mb-0">MDPI<br><span class="text-muted">Sustainability MDPI</span></p>
+                                </div>
+                                <div class="col-md-6 mb-3 text-center">
+                                    <img src="images/afrika_journal.png" alt="African Cities Journal" class="img-fluid" style="max-height: 60px;">
+                                    <p class="small mt-2 mb-0">African Cities Journal<br><span class="text-muted">Revue spécialisée</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow card-hover hover-tilt scroll-animate">
+                        <img src="images/bg.jpg" class="card-img-top" alt="Campus universitaire technologique">
+                        <div class="card-body">
+                            <h5 class="card-title">Conférence</h5>
+                            <p class="card-text">Cette conférence vise à rassembler les chercheurs, éducateurs, technologues et décideurs pour explorer l'intersection de l'informatique, de l'EdTech et des objectifs de développement durable (ODD).</p>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0">Certification</h6>
+                                    <small>Certificat de participation délivré à tous les participants</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Objectives - MASQUÉE -->
+            <!-- <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="section-title">Objectifs de la Conférence</h3>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-light-blue rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                <i class="bi bi-people-fill text-primary fs-3"></i>
+                            </div>
+                            <h5>Recherche</h5>
+                            <p>Mettre en valeur la recherche et l'innovation actuelles en informatique et EdTech dans le Sud global.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-light-green rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                <i class="bi bi-lightbulb-fill text-success fs-3"></i>
+                            </div>
+                            <h5>Intégration</h5>
+                            <p>Promouvoir l'intégration responsable et inclusive de l'IA, de la science des données et des outils numériques dans l'éducation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-light-orange rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                <i class="bi bi-book-half text-warning fs-3"></i>
+                            </div>
+                            <h5>Coopération</h5>
+                            <p>Renforcer la coopération Nord-Sud et Sud-Sud sur les TIC pour le développement durable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-light-blue rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                                <i class="bi bi-globe-americas text-info fs-3"></i>
+                            </div>
+                            <h5>Réseau</h5>
+                            <p>Construire un réseau de recherche autour de l'IA pour l'Éducation et la Durabilité Numérique en Afrique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Target Audience - MASQUÉE -->
+            <!-- <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="section-title">Public Cible</h3>
+                    <p>La conférence s'adresse à :</p>
+                    <ul>
+                        <li>Chercheurs, professeurs et doctorants en informatique, éducation et développement durable</li>
+                        <li>Entrepreneurs et startups EdTech</li>
+                        <li>Décideurs politiques, ministères et agences de développement</li>
+                        <li>ONG TIC4D et éducation numérique</li>
+                        <li>Établissements d'enseignement supérieur africains et écoles de formation des enseignants</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Submission Section -->
+    <section id="soumission" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-center colorful">Soumission d'Articles</h2>
+                    <!-- <p class="lead">Soumettez vos travaux de recherche pour présentation à la conférence</p> -->
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Tracks Thématiques</h4>
+                            <div class="accordion" id="tracksAccordion">
+                                <!-- Track T1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingT1">
+                                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT1" aria-expanded="false" aria-controls="collapseT1">
+                                            T1. Développement Logiciel & Systèmes d'Apprentissage Numérique
+                                        </button>
+                                    </h2>
+                                    <div id="collapseT1" class="accordion-collapse collapse" aria-labelledby="headingT1" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            <p class="small mb-3 text-muted">Ingénierie logicielle innovante pour une éducation intelligente et durable</p>
+                                            <ul class="list-unstyled small">
+                                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Développement de plateformes d'apprentissage numérique</li>
+                                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Outils éducatifs open-source</li>
+                                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Applications d'apprentissage cloud et mobile</li>
+                                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Réalité virtuelle et augmentée pour l'éducation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Track T2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingT2">
+                                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT2" aria-expanded="false" aria-controls="collapseT2">
+                                            T2. Réseaux, Cybersécurité & Infrastructure pour l'Éducation Résiliente
+                                        </button>
+                                    </h2>
+                                    <div id="collapseT2" class="accordion-collapse collapse" aria-labelledby="headingT2" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            <p class="small mb-3 text-muted">Sécurisation des écosystèmes numériques pour un apprentissage inclusif et résilient</p>
+                                            <ul class="list-unstyled small">
+                                                <li class="mb-2"><i class="bi bi-shield-check text-primary me-2"></i>Infrastructure TIC pour les écoles</li>
+                                                <li class="mb-2"><i class="bi bi-shield-check text-primary me-2"></i>Optimisation des réseaux pour l'EdTech</li>
+                                                <li class="mb-2"><i class="bi bi-shield-check text-primary me-2"></i>Cybersécurité dans les environnements d'apprentissage en ligne</li>
+                                                <li class="mb-2"><i class="bi bi-shield-check text-primary me-2"></i>Confidentialité et éthique des données</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Track T3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingT3">
+                                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT3" aria-expanded="false" aria-controls="collapseT3">
+                                            T3. Intelligence Artificielle, Science des Données & Analytics d'Apprentissage
+                                        </button>
+                                    </h2>
+                                    <div id="collapseT3" class="accordion-collapse collapse" aria-labelledby="headingT3" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            <p class="small mb-3 text-muted">Approches IA et basées sur les données pour un apprentissage durable et personnalisé</p>
+                                            <ul class="list-unstyled small">
+                                                <li class="mb-2"><i class="bi bi-robot text-info me-2"></i>Systèmes tutoriaux intelligents</li>
+                                                <li class="mb-2"><i class="bi bi-robot text-info me-2"></i>Analytics d'apprentissage et modélisation prédictive</li>
+                                                <li class="mb-2"><i class="bi bi-robot text-info me-2"></i>IA pour l'accessibilité et l'inclusion</li>
+                                                <li class="mb-2"><i class="bi bi-robot text-info me-2"></i>IA générative et implications éthiques dans l'éducation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Track T4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingT4">
+                                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT4" aria-expanded="false" aria-controls="collapseT4">
+                                            T4. Technologies Éducatives & Innovation Pédagogique
+                                        </button>
+                                    </h2>
+                                    <div id="collapseT4" class="accordion-collapse collapse" aria-labelledby="headingT4" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            <p class="small mb-3 text-muted">Transformer l'enseignement et l'apprentissage grâce aux technologies éducatives émergentes</p>
+                                            <ul class="list-unstyled small">
+                                                <li class="mb-2"><i class="bi bi-lightbulb text-warning me-2"></i>Pédagogie numérique et design instructionnel</li>
+                                                <li class="mb-2"><i class="bi bi-lightbulb text-warning me-2"></i>MOOCs, microlearning et modèles hybrides</li>
+                                                <li class="mb-2"><i class="bi bi-lightbulb text-warning me-2"></i>Éducation en informatique</li>
+                                                <li class="mb-2"><i class="bi bi-lightbulb text-warning me-2"></i>Développement des compétences numériques des enseignants</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Track T5 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingT5">
+                                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT5" aria-expanded="false" aria-controls="collapseT5">
+                                            T5. TIC pour le Développement Durable et l'Innovation Sociale
+                                        </button>
+                                    </h2>
+                                    <div id="collapseT5" class="accordion-collapse collapse" aria-labelledby="headingT5" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            <p class="small mb-3 text-muted">Transformation numérique et informatique pour des sociétés durables</p>
+                                            <ul class="list-unstyled small">
+                                                <li class="mb-2"><i class="bi bi-globe text-success me-2"></i>Solutions TIC pour les villes intelligentes et l'e-gouvernance</li>
+                                                <li class="mb-2"><i class="bi bi-globe text-success me-2"></i>Surveillance environnementale et systèmes de données</li>
+                                                <li class="mb-2"><i class="bi bi-globe text-success me-2"></i>Inclusion numérique et éducation rurale</li>
+                                                <li class="mb-2"><i class="bi bi-globe text-success me-2"></i>Entrepreneuriat tech et économie numérique</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Types de Soumission</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="p-3 border rounded h-100">
+                                        <h5>Articles Complets</h5>
+                                        <p class="small">8-10 pages, présentation orale, publication dans les actes</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="p-3 border rounded h-100">
+                                        <h5>Articles Courts</h5>
+                                        <p class="small">4-6 pages, présentation orale ou poster</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="p-3 border rounded h-100">
+                                        <h5>Posters & Démonstrations</h5>
+                                        <p class="small">2 pages, session posters, démonstrations pratiques</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h5>Instructions aux Auteurs</h5>
+                                <ul>
+                                    <li>Les soumissions doivent être originales et non publiées ailleurs</li>
+                                    <li>Format : PDF conforme au modèle Springer LNCS</li>
+                                    <li>Langues : Français ou Anglais</li>
+                                    <li>Soumission via Ms CMT : <a href="#" id="submission-link">lien à venir</a></li>
+                                </ul>
+                                <div class="mt-3">
+                                    <h6>Partenaires de Publication</h6>
+                                    <p class="small text-muted">EDP Science (E3S Web of Conference) • Springer • Data & Policy (Cambridge University Press) • MDPI • African Cities Journal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="sticky-top" style="top: 100px;">
+                        <div class="card border-primary border-2 shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Calendrier de Soumission</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="submission-timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">Décembre 2025</div>
+                                        <h6>Lancement appel à communications</h6>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">Mars 2026</div>
+                                        <h6>Soumission articles complets</h6>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">Avril 2026</div>
+                                        <h6>Notification d'acceptation</h6>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">Début Mai 2026</div>
+                                        <h6>Soumission version finale</h6>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">Mi-Mai 2026</div>
+                                        <h6>Date limite inscription</h6>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">Début Juin 2026</div>
+                                        <h6>Conférence</h6>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <a href="#" id="submit-article-btn" class="btn btn-register w-100 mb-2">Soumettre un Article</a>
+                                    <a href="#" id="download-template-btn" class="btn btn-outline-register w-100">Télécharger le Modèle</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-0 shadow-sm mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Publications et Résultats</h5>
+                                <p>Les articles seront publiés dans :</p>
+                                <ul class="small">
+                                    <li><strong>Actes de conférence :</strong><br>• E3S Web of Conference (indexé Google Scholar, Scopus)<br>• Springer book (indexé Google Scholar, Scopus)</li>
+                                    <li><strong>Numéros spéciaux :</strong><br>• Data & Policy (Cambridge University Press)<br>• Sustainability MDPI<br>• African Cities Journal<br>• RISE (Revue des Sciences de l'éducation)<br>• Syllabus</li>
+                                    <li><strong>Autres :</strong><br>• Policy brief sur "IA et EdTech pour le Développement Durable en Afrique"<br>• Lancement du Réseau Africain sur l'Informatique et les Technologies Éducatives (AfriCSET)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section id="programme" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-center forest">Programme de la Conférence</h2>
+                    <p class="lead">Trois jours d'échanges, d'apprentissage et de networking</p>
+                </div>
+            </div>
+            
+            <!-- Day Tabs -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="dayTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#day1">Jour 1<br><small>Début Juin 2026</small></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#day2">Jour 2<br><small>Mi-Juin 2026</small></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#day3">Jour 3<br><small>Fin Juin 2026</small></button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="dayTabsContent">
+                <!-- Day 1 -->
+                <div class="tab-pane fade show active" id="day1">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>08:30 - 09:30</h5>
+                                    <span class="badge bg-primary">Inscription</span>
+                                </div>
+                                <h4>Accueil et enregistrement des participants</h4>
+                                <p>Hall principal de l'Université de Yaoundé</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>09:30 - 10:30</h5>
+                                    <span class="badge bg-success">Cérémonie</span>
+                                </div>
+                                <h4>Cérémonie d'ouverture</h4>
+                                <p>Discours d'ouverture par les autorités universitaires et gouvernementales</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>10:30 - 12:00</h5>
+                                    <span class="badge bg-info">Conférence plénière</span>
+                                </div>
+                                <h4>Conférence plénière : "L'IA au service de l'éducation durable"</h4>
+                                <p>À compléter</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>14:00 - 16:00</h5>
+                                    <span class="badge bg-warning text-dark">Sessions parallèles</span>
+                                </div>
+                                <h4>Sessions parallèles : Recherches en TE</h4>
+                                <p>Présentations de recherches sur les technologies éducatives et développement durable</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>16:30 - 18:00</h5>
+                                    <span class="badge bg-secondary">Atelier</span>
+                                </div>
+                                <h4>Atelier pratique : Conception de cours en ligne</h4>
+                                <p>Introduction aux outils de création de contenus éducatifs numériques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="tab-pane fade" id="day2">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>09:00 - 10:30</h5>
+                                    <span class="badge bg-info">Conférence plénière</span>
+                                </div>
+                                <h4>Conférence plénière : "Blockchain pour l'éducation certifiée"</h4>
+                                <p>À compléter</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>11:00 - 13:00</h5>
+                                    <span class="badge bg-warning text-dark">Table ronde</span>
+                                </div>
+                                <h4>Table ronde : "Politiques éducatives à l'ère du numérique"</h4>
+                                <p>Ministres, décideurs et experts discutent des politiques pour l'éducation numérique</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>14:30 - 16:30</h5>
+                                    <span class="badge bg-success">EdTech Day</span>
+                                </div>
+                                <h4>Événement EdTech Day : Démonstrations de solutions</h4>
+                                <p>Présentation des dernières innovations en technologies éducatives par des startups</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>17:00 - 18:30</h5>
+                                    <span class="badge bg-primary">Posters</span>
+                                </div>
+                                <h4>Session posters et networking</h4>
+                                <p>Présentation de recherches sous forme de posters et échanges informels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 3 -->
+                <div class="tab-pane fade" id="day3">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>09:00 - 10:30</h5>
+                                    <span class="badge bg-info">Conférence plénière</span>
+                                </div>
+                                <h4>Conférence plénière : "Réalité virtuelle pour l'apprentissage immersif"</h4>
+                                <p>À compléter</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>11:00 - 13:00</h5>
+                                    <span class="badge bg-warning text-dark">Sessions parallèles</span>
+                                </div>
+                                <h4>Sessions parallèles : Intelligence artificielle en éducation</h4>
+                                <p>Applications de l'IA pour l'adaptation des apprentissages et l'évaluation</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>14:30 - 16:00</h5>
+                                    <span class="badge bg-secondary">Atelier</span>
+                                </div>
+                                <h4>Atelier : "Éducation aux médias et littératie numérique"</h4>
+                                <p>Stratégies pour développer les compétences numériques critiques</p>
+                            </div>
+                            
+                            <div class="schedule-item">
+                                <div class="d-flex justify-content-between">
+                                    <h5>16:30 - 18:00</h5>
+                                    <span class="badge bg-success">Clôture</span>
+                                </div>
+                                <h4>Cérémonie de clôture et remise des prix</h4>
+                                <p>Synthèse des travaux, annonce des meilleures présentations et mot de clôture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keynote Speakers Section -->
+    <section id="speakers" class="teachers-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Conférenciers Principaux (Keynote Speakers)</h2>
+                <p class="section-subtitle">Experts internationaux en informatique et technologies éducatives</p>
+            </div>
+            
+            <div class="teachers-grid">
+                <!-- Keynote Speaker 1 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/fouda.jpeg" alt="Prof. Marcel L. FOUDA NDJODO">
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="fouda-keynote" data-section="keynote">
+                                Voir les détails - Conférencier Principal
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Prof. Marcel L. FOUDA NDJODO</h3>
+                        <p class="teacher-title">Cameroun</p>
+                        <p class="teacher-specialty">Expert en informatique et technologies éducatives</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:marcel.fouda@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/marcel-fouda" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/marcel-fouda" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Keynote Speaker 2 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/nkwenti.jpeg" alt="Michael KWENTI">
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="nkwenti-keynote" data-section="keynote">
+                                Voir les détails - Conférencier Principal
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Michael KWENTI</h3>
+                        <p class="teacher-title">Cameroun</p>
+                        <p class="teacher-specialty">Expert en informatique et technologies éducatives</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:michael.kwenti@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/michael-kwenti" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/michael-kwenti" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Keynote Speaker 3 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/tekouabou.jpeg" alt="Stéphane C. K. TEKOUABOU">
+                        <div class="teacher-overlay">
+                            <button class="btn btn-primary teacher-details" data-bs-toggle="modal" data-bs-target="#teacherModal" data-teacher-id="tekouabou-keynote" data-section="keynote">
+                                Voir les détails - Conférencier Principal
+                            </button>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Stéphane C. K. TEKOUABOU</h3>
+                        <p class="teacher-title">Cameroun</p>
+                        <p class="teacher-specialty">Expert en informatique et technologies éducatives</p>
+                        <div class="teacher-contact">
+                            <a href="mailto:stephan.tekouabou@ens-yaounde.cm" class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/stephan-tekouabou" class="contact-icon">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/stephan-tekouabou" class="contact-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committees Section -->
+    <section id="comite" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-center ocean">Comités d'Organisation</h2>
+                    <p class="lead">Les comités responsables de l'organisation de la conférence</p>
+                </div>
+            </div>
+            
+            <!-- Comité de Pilotage (provisoire) -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h4 class="mb-4">Comité de Pilotage (provisoire)</h4>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">H. E. Prof. Jaques Fame Ndongo</h5>
+                            <p class="text-muted small mb-1">MINESUP</p>
+                            <p class="text-muted small">Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">H. E. Prof. Nalova Lyonga</h5>
+                            <p class="text-muted small mb-1">MINESEC</p>
+                            <p class="text-muted small">Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">H. E. Prof. Laurent Serge Etoundi Ngoa</h5>
+                            <p class="text-muted small mb-1">MINEDUB</p>
+                            <p class="text-muted small">Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <h4 class="mb-4">Invités d'Honneur (provisoire)</h4>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">Prof. ETOUA</h5>
+                            <p class="text-muted small mb-1">Président</p>
+                            <p class="text-muted small">Université de Yaoundé, Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">Prof. Patricia BISSA EMANA</h5>
+                            <p class="text-muted small mb-1">Directrice</p>
+                            <p class="text-muted small">ENS Yaoundé, Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">Prof. Nicolas Gabriel ANDJIGA</h5>
+                            <p class="text-muted small mb-1">Ancien Directeur ENS</p>
+                            <p class="text-muted small">Université de Yaoundé 1, Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="committee-card committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <div class="committee-photo-placeholder">
+                                <i class="bi bi-person-circle text-muted"></i>
+                                <small class="text-muted">Photo à venir</small>
+                            </div>
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">Prof. Emmanuel TONYE</h5>
+                            <p class="text-muted small mb-1">ICT University</p>
+                            <p class="text-muted small">Yaoundé, Cameroun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scientific Committee -->
+            <!-- Co-Présidents -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h4 class="mb-4">Co-Présidents (provisoire)</h4>
+                </div>
+                
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <img src="images/fouda.jpeg" alt="Prof. Marcel L. FOUDA NDJODO" class="committee-photo" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">Prof. Marcel L. FOUDA NDJODO</h5>
+                            <p class="text-muted small mb-1">Président</p>
+                            <p class="text-muted small">IGA, MINESUP & Université de Yaoundé 1</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="committee-member card-hover h-100 text-center">
+                        <div class="position-relative">
+                            <img src="images/nkwenti.jpeg" alt="Michael KWENTI" class="committee-photo" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                            <span class="country-flag">🇨🇲</span>
+                        </div>
+                        <div class="p-3">
+                            <h5 class="fw-bold">Michael KWENTI</h5>
+                            <p class="text-muted small mb-1">Co-Président</p>
+                            <p class="text-muted small">IT, MINBASE & Université de Yaoundé 1</p>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+            <!-- Local Organizing Committee -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h4 class="mb-4">Comité Local d'Organisation</h4>
+                    <p class="text-muted">Les membres du comité local d'organisation seront annoncés prochainement.</p>
+                </div>
+            </div>
+            
+            <!-- Comité de Programme Technique split into 3 blocks -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h4 class="mb-4">Comité de Programme Technique</h4>
+                </div>
+                
+                <!-- First block -->
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Membres (1-8)</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Marcel FOUDA NDJODO</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Michael KWENTI</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Ella MVOMO</strong> - FSJP, Université de Yaoundé 2, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Cyrille Ivan CHAFFI</strong> - DSE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇷🇴</span> <strong>Stephan GHERGHINA</strong> - University of Bucharest, Bucharest</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Priso ESSAWE NDEDI</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Eric ZOBO</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Janvier GNOULAYE</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second block -->
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Membres (9-16)</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><span class="country-flag">🇲🇦</span> <strong>Elarbi Alaoui ABDELLAOUI</strong> - ENS, Moulay Ismail University, Meknès</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Léonnel Martial TSAGUE</strong> - FSE, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Eric Désiré KAMENI</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Amougou NGOUMOU</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇭</span> <strong>Jean Claude MUNYAKA</strong> - CEAT, EPFL, Lausanne</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>David FOTSO FOTUE</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Willy KENGNE</strong> - ENSPY, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇲🇦</span> <strong>Hassan SILKAN</strong> - FS, Chaouib Doukkali University, El Jadida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Third block -->
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Membres (17-24)</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Alain Blaise KABO</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Pie Désiré EBODE</strong> - ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Stéphane C. K. TEKOUABOU</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇲🇦</span> <strong>Nawal BENABDALLAH</strong> - UIR, Rabat</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Félicité GAMGNE</strong> - DITE, ENS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇨🇲</span> <strong>Victor LOUMGAN</strong> - FS, Université de Yaoundé 1, Yaoundé</li>
+                                <li class="mb-1"><span class="country-flag">🇲🇦</span> <strong>Abdelaziz HESSANE</strong> - FS, Sidi Mohammed Benabdellah University, Fes</li>
+                                <li class="mb-1"><span class="country-flag">🇲🇦</span> <strong>Hamza TOULNI</strong> - Mine School, Mohammed 5 University, Rabat</li>
+                                <li class="mb-1"><span class="country-flag">🇲🇦</span> <strong>Khalil Idrissi GARTOUMI</strong> - UIR, Rabat</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PhD Committee -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h4 class="mb-4">Comité PhD</h4>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Membres</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Ange Gabriel BELING</strong> - FS, Mohammed 5 University, Rabat, Morocco <span class="country-flag">🇲🇦</span></li>
+                                <li class="mb-2"><strong>Christophe NTEME</strong> - FS, Université de Yaoundé 1, Yaoundé, Cameroun <span class="country-flag">🇨🇲</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="inscription" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title forest">Inscription à la Conférence</h2>
+                    <p class="mb-4">Réservez votre place dès maintenant pour participer à cet événement international. Tarifs spéciaux pour les étudiants et groupes.</p>
+                    
+                    <!-- Tableau des Tarifs -->
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Catégorie</th>
+                                    <th>Mode Présentiel<br>CEMAC</th>
+                                    <th>Mode En Ligne<br>CEMAC</th>
+                                    <th>Mode Présentiel<br>International (€)</th>
+                                    <th>Mode En Ligne<br>International (€)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Étudiant</strong></td>
+                                    <td>35.000 FCFA</td>
+                                    <td>30.000 FCFA</td>
+                                    <td>55 €</td>
+                                    <td>45 €</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PLEG & PCEG</strong></td>
+                                    <td>50.000 FCFA</td>
+                                    <td>40.000 FCFA</td>
+                                    <td>68 €</td>
+                                    <td>59 €</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Académie</strong></td>
+                                    <td>60.000 FCFA</td>
+                                    <td>50.000 FCFA</td>
+                                    <td>86 €</td>
+                                    <td>73 €</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Professionnel</strong></td>
+                                    <td>75.000 FCFA</td>
+                                    <td>60.000 FCFA</td>
+                                    <td>118 €</td>
+                                    <td>86 €</td>
+                                </tr>
+                                <tr class="table-light">
+                                    <td><strong>Auditeur</strong></td>
+                                    <td>15.000 FCFA</td>
+                                    <td>Gratuit</td>
+                                    <td>27 €</td>
+                                    <td>Gratuit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4">Formulaire d'inscription</h4>
+                            <form id="registrationForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">Prénom *</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Nom *</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="institution" class="form-label">Institution/Organisation *</label>
+                                    <input type="text" class="form-control" id="institution" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="category" class="form-label">Catégorie *</label>
+                                    <select class="form-select" id="category" required>
+                                        <option value="">Sélectionnez une catégorie</option>
+                                        <option value="student">Étudiant CEMAC (35.000 FCFA)</option>
+                                        <option value="professional">Professionnel CEMAC (75.000 FCFA)</option>
+                                        <option value="international">Participant International</option>
+                                        <option value="pleg">PLEG & PCEG (50.000 FCFA)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="days" class="form-label">Jours de participation *</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="day1Check" value="day1" checked>
+                                        <label class="form-check-label" for="day1Check">Jour 1 (Début Juin)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="day2Check" value="day2" checked>
+                                        <label class="form-check-label" for="day2Check">Jour 2 (Mi-Juin)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="day3Check" value="day3" checked>
+                                        <label class="form-check-label" for="day3Check">Jour 3 (Fin Juin)</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="comments" class="form-label">Commentaires ou exigences particulières</label>
+                                    <textarea class="form-control" id="comments" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="terms" required>
+                                    <label class="form-check-label" for="terms">
+                                        J'accepte les <a href="#" id="terms-link">conditions générales</a> et la <a href="#" id="privacy-link">politique de confidentialité</a> *
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-register w-100">S'inscrire Maintenant</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-center colorful">Partenaires & Sponsors</h2>
+                    <!-- <p class="lead">Nous remercions nos partenaires pour leur soutien</p> -->
+                </div>
+            </div>
+            
+            <!-- Organisateurs Officiels -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4">Organisateurs Officiels</h4>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-4 mb-3 text-center">
+                        <div class="p-3 bg-white rounded border">
+                            <h5 class="fw-bold">Laboratoire LITE</h5>
+                            <p class="small">Laboratoire d'Informatique et des Technologies Éducatives</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 text-center">
+                        <div class="p-3 bg-white rounded border">
+                            <h5 class="fw-bold">SCNEF</h5>
+                            <p class="small">Société Camerounaise pour le Numérique Éducatif et la Formation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partenaires reorganized into 4 blocks -->
+            <div class="row mb-5">
+                <!-- Partenaires Institutionnels -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Partenaires Institutionnels</h5>
+                            <div class="row align-items-center">
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/minsup.jpeg" alt="MINESUP" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/minsec.jpeg" alt="MINESEC" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/minbase.png" alt="MINBASE" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/auf.png" alt="AUF" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/universite_y1.png" alt="Université de Yaoundé 1" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/ens.jpeg" alt="ENS" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/unesco.png" alt="UNESCO" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/unicef.png" alt="UNICEF" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partenaires Industrie Tech -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Partenaires Industrie Tech</h5>
+                            <div class="row align-items-center">
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/camtel.jpeg" alt="CAMTEL" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/google.png" alt="Google Africa" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/huawei.jpeg" alt="Huawei" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/microsft.png" alt="Microsoft" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/orange.png" alt="Orange Digital Center" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partenaires de Publication -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Partenaires de Publication</h5>
+                            <div class="row align-items-center">
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/edp.png" alt="EDP Science (E3S Web of Conference)" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/springer.png" alt="Springer" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/data an policy.png" alt="Data & Policy (Cambridge University Press)" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/mdpi.png" alt="MDPI" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/afrika_journal.png" alt="African Cities Journal" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Media Partners -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Media Partners</h5>
+                            <div class="row align-items-center">
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/crtv.jpeg" alt="CRTV" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                                <div class="col-6 mb-3 text-center">
+                                    <img src="images/equinox.jpeg" alt="EQUINOX" class="img-fluid" style="max-height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="mb-0">Devenez sponsor de l'événement : <a href="mailto:sponsors@conference-iate2025.cm" class="text-primary">sponsors@conference-iate2025.cm</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center ocean">Contact & Informations</h2>
+                    <!-- <p class="lead mb-5">Pour toute question concernant la conférence, n'hésitez pas à nous contacter</p> -->
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="p-4 bg-white rounded shadow-sm">
+                                <i class="bi bi-geo-alt fs-1 text-primary mb-3"></i>
+                                <h5>Lieu</h5>
+                                <p>École Normale Supérieure (ENS)<br>Université de Yaoundé I<br>Yaoundé, Cameroun</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="p-4 bg-white rounded shadow-sm">
+                                <i class="bi bi-envelope fs-1 text-primary mb-3"></i>
+                                <h5>Email</h5>
+                                <p>secretariat@icased2026.cm<br>info@icased2026.cm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="p-4 bg-white rounded shadow-sm">
+                                <i class="bi bi-telephone fs-1 text-primary mb-3"></i>
+                                <h5>Téléphone</h5>
+                                <p>+237 XXX XX XX XX<br>+237 XXX XX XX XX</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <h5>Organisateurs Principaux</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <div class="p-3 border rounded">
+                                    <h6 class="fw-bold">Laboratoire LITE</h6>
+                                    <p class="small mb-0">Laboratoire d'Informatique et des Technologies Éducatives<br>Université de Yaoundé I</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="p-3 border rounded">
+                                    <h6 class="fw-bold">SCNEF</h6>
+                                    <p class="small mb-0">Société Camerounaise du Numérique pour l'Éducation et la Formation<br>Ministère des Postes et Télécommunications</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="fw-bold mb-4">CAITED 2026</h4>
+                    <p>Conférence sur les Avancées en Informatique et Technologies Éducatives pour une Société et un Développement Durables.</p>
+                    <p>Organisée par le <strong>Laboratoire LITE</strong>, <strong>École Normale Supérieure (ENS)</strong>, <strong>Université de Yaoundé I – Cameroun</strong>.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#accueil">Accueil</a></li>
+                        <li class="mb-2"><a href="#about">À propos</a></li>
+                        <li class="mb-2"><a href="#soumission">Soumission</a></li>
+                        <li class="mb-2"><a href="#programme">Programme</a></li>
+                        <li class="mb-2"><a href="#speakers">Conférenciers</a></li>
+                        <li class="mb-2"><a href="#comite">Comités</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Dates importantes</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>Décembre 2025</strong><br>Lancement appel à communications</li>
+                        <li class="mb-2"><strong>Mars 2026</strong><br>Soumission articles complets</li>
+                        <li class="mb-2"><strong>Avril 2026</strong><br>Notification d'acceptation</li>
+                        <li class="mb-2"><strong>Début Mai 2026</strong><br>Soumission version finale</li>
+                        <li class="mb-2"><strong>Mi-Mai 2026</strong><br>Date limite inscription</li>
+                        <li class="mb-2"><strong>Début Juin 2026</strong><br>Conférence</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="fw-bold mb-4">Suivez-nous</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6>Newsletter</h6>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Votre email">
+                            <button class="btn btn-outline-light" type="button">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visitor Statistics Button -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-bar-chart me-2"></i>Statistiques des Visiteurs</h5>
+                    <button class="btn btn-outline-light" id="statsButton" data-bs-toggle="modal" data-bs-target="#statsModal">
+                        <i class="bi bi-eye me-2"></i>Voir les Statistiques
+                    </button>
+                    <small class="text-light d-block mt-2">
+                        <i class="bi bi-info-circle me-1"></i>
+                        Total des consultations: <span id="totalVisits">0</span>
+                    </small>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: #34495e;">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2026 Conférence CAITED 2026. Tous droits réservés.</p>
+                    <p class="small mb-0">Organisé par le Laboratoire LITE et l'ENS, Université de Yaoundé I</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="me-3">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Teacher Details Modal -->
+    <div class="modal fade" id="teacherModal" tabindex="-1" aria-labelledby="teacherModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="teacherModalLabel">
+                        <i class="bi bi-person-circle me-2"></i>
+                        <span id="teacherModalName">Nom de l'enseignant</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div id="teacherModalImage" class="text-center mb-3">
+                                <!-- Image will be populated by JavaScript -->
+                            </div>
+                            <div class="teacher-contact-modal">
+                                <h6 class="fw-bold mb-2">Contact :</h6>
+                                <div id="teacherModalContact" class="contact-info">
+                                    <!-- Contact info will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h6 class="text-primary fw-bold mb-2">Poste :</h6>
+                            <p id="teacherModalTitle" class="mb-3 small"></p>
+                            
+                            <h6 class="fw-bold mb-2">Spécialité :</h6>
+                            <p id="teacherModalSpecialty" class="mb-3 small"></p>
+                            
+                            <h6 class="fw-bold mb-2">Institution :</h6>
+                            <p id="teacherModalInstitution" class="mb-3 small"></p>
+                            
+                            <div id="teacherModalAdditionalInfo" class="mt-3">
+                                <!-- Additional info will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <a href="#contact" class="btn btn-primary">Contacter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visitor Statistics Modal -->
+    <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statsModalLabel">
+                        <i class="bi bi-bar-chart me-2"></i>Statistiques des Visiteurs
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h3 class="text-primary mb-0" id="modalTotalVisits">0</h3>
+                                    <p class="text-muted mb-0">Total des consultations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 class="mb-3">
+                                <i class="bi bi-globe me-2"></i>Visites par Pays
+                            </h6>
+                            <div id="modalCountryStats" class="country-stats-list">
+                                <!-- Statistics will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <small class="text-muted">
+                        <i class="bi bi-info-circle me-1"></i>
+                        Statistiques mises à jour en temps réel
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal - DISABLED -->
+    <!-- <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminModalLabel">Espace Administrateur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adminLoginForm">
+                        <div class="mb-3">
+                            <label for="adminUsername" class="form-label">Nom d'utilisateur</label>
+                            <input type="text" class="form-control" id="adminUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="adminPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" id="adminLoginBtn">Se Connecter</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/api-integration.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/registration-handler.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/visitor-stats.js"></script>
+    <script src="js/teacher-modal.js"></script>
+</body>
+</html>
